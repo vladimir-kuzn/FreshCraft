@@ -1,0 +1,99 @@
+.main {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main > img {
+    position: absolute;
+    z-index: -1;
+    opacity: 50%;
+    width: 100%;
+}
+.wrapper {
+    margin: 50px 0;
+}
+.main_box {
+    background-color: rgba(17, 17, 17, 85%);
+    padding: 15px 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form > span {
+    font-size: 44px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+form > div {
+    width: 100%;
+}
+
+form > div > input {
+    border-left-width: 0px;
+    border-left-style: solid;
+    border-right-width: 0px;
+    border-right-style: solid;
+}
+
+.label_input span {
+    font-size: 24px;
+    margin-left: 15px;
+}
+.label_input input {
+    font-size: 22px;
+    padding: 10px 10px;
+    margin: 5px 0 30px 0;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+}
+.label_input {
+    display: flex;
+    flex-direction: column;
+}
+.label_input a {
+    color: white;
+    position: absolute;
+    margin-left: 110px;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: auto;
+}
+
+button[type="submit"]{
+    cursor: pointer;
+}
+
+.submit {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.submit > a > img {
+    width: 24px;
+    margin-right: 5px;
+}
+
+.additional{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.additional span {
+    font-size: 22px;
+    margin-bottom: 0px;
+}
+.additional a {
+    font-size: 24px;
+    color: #9a4dff;
+}

@@ -1,0 +1,382 @@
+* {
+    font-family: 'Noto Sans';
+    z-index: 0;
+}
+
+h1 {
+    font-family: "Noto Sans";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-family: "Noto Sans";
+    font-size: 18px;
+    line-height: 26px;
+}
+
+body {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+header {
+    background-color: #111111;
+    display: flex;
+    height: 83px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+    box-shadow: 0 2px 15px black;
+}
+
+input {
+    outline: none;
+}
+
+header img {
+    width: 230px;
+    pointer-events: none;
+}
+
+header a {
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+
+/* АНИМАЦИЯ БОЛЬШОЙ КНОПКИ */
+
+@-webkit-keyframes sheen {
+    0% {
+        transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+        transform: skewY(-45deg) translateX(12.5em);
+    }
+  }
+  @keyframes sheen {
+    0% {
+        transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+        transform: skewY(-45deg) translateX(12.5em);
+    }
+  }
+
+  .big-button {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #9a4dff;
+    border: 2px solid #2b1d3b;
+    display: flex;
+    width: max-content;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    padding: 15px 25px;
+    font-weight: 700;
+    text-shadow: 1px 1px #3b3d3e;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+  .big-button:before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+
+  .big-button:hover {
+    background-color: #9a4dff;
+    color: white;
+    border-bottom: 4px solid #2b1d3b;
+    border-right: 4px solid #2b1d3b;
+    border-top: 0;
+    border-left: 0;
+    text-shadow: 2px 2px #3b3d3e;
+  }
+
+  .big-button:hover:before {
+    transform: skewX(-45deg) translateX(21.5em);
+    transition: all 0.7s ease-in-out;
+  }
+
+  /* ================== */
+
+.header__container {
+    display: flex;
+    height: 83px;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+
+.header__wrapper {
+    display: flex;
+    height: 83px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.header__links {
+    margin-left: 30px;
+}
+
+.header__logo {
+    position: absolute;
+}
+
+.header__logo a {
+    display: inline-block;
+}
+
+.header__links a {
+    margin-right: 20px;
+}
+
+.header__getfresh {
+    width: 600px;
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.button_login {
+    margin-right: 20px;
+}
+
+.btn_ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #9a4dff;
+    min-width: 32px;
+    height: 32px;
+}
+
+.btn_ svg {
+    width: 32px;
+    fill: white;
+}
+
+.subs_on_news {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.subs_on_news h2 {
+    margin: 20px 0;
+}
+
+.more_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.more_links a {
+    margin: 0 10px;
+    background-color: #111111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: all 0.2s;
+}
+
+.more_links img {
+    width: 35px;
+    height: 35px;
+}
+
+.link_youtube:hover {
+    background-color: #ff0000;
+    transition: all 0.2s;
+}
+.link_discord:hover {
+    background-color: #5662f6;
+    transition: all 0.2s;
+}
+.link_vk:hover {
+    background-color: #0077ff;
+    transition: all 0.2s;
+}
+.link_twitter:hover {
+    background-color: #40abe2;
+    transition: all 0.2s;
+}
+
+footer {
+    background-color: #111111;
+}
+
+.footer_wrapper {
+    padding: 64px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_logos {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_logos img {
+    height: 100px;
+}
+
+.footer_logos > * {
+    margin-right: 20px;
+}
+
+.sitemap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 380px;
+    width: 450px;
+    margin-left: 10px;
+}
+
+.sitemap h3 {
+    color: white;
+}
+
+.sitemap a {
+    color: #9a4dff;
+    text-decoration: none;
+}
+
+.sitemap > * {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.sitemap > div {
+    margin: 6px 0;
+}
+
+.sitemap h3,a {
+    margin: 4px 0;
+}
+
+.logo_grape {
+    color: white;
+}
+
+.info-legal {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.info-legal p {
+    color: gray;
+    font-size: 12px;
+    margin: 1px 0;
+}
+
+#logout {
+    position: relative;
+    display: inline-block;
+    line-height: 16px;
+}
+
+.user_btn {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: relative;
+}
+
+.user_btn::before {
+    content: url("https://freshcraft.pheo-design.ru/img/ui-icons/arrow-down.png");
+    position: absolute;
+    right: -30px;
+    top: 3px;
+}
+
+.user_do {
+    background-color: #111111;
+    border: 2px solid #9a4dff; ;
+    position: absolute;
+    width: 124px;
+    height: 124px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    align-items: end;
+}
+
+.second_ul {
+    display: none;
+
+    position: absolute;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: #111111;
+    width: min-content;
+    padding: 5px;
+}
+
+.second_ul a {
+    width: initial;
+    font-size: 15px;
+    padding: 10px;
+    justify-content: center;
+}
+
+ul:hover .user_btn::before {
+    content: url("https://freshcraft.pheo-design.ru/img/ui-icons/arrow-up.png");
+}
+
+ul:hover .second_ul {
+    display: flex;
+    align-items: normal;
+}
+
+.user_btn:hover {
+    color: #9a4dff;
+}
+
+ul:hover .user_btn {
+    color: #9a4dff;
+}
+
+.second_ul > a:nth-child(1) {
+ margin-bottom: 5px;
+}
