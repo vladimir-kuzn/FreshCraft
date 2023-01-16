@@ -7,7 +7,7 @@
     <div class="welcome_container">
         <div class="weclome_wrapper">
             <h1>
-                ДОБРО ПОЖАЛОВАТЬ НА ОФИЦИАЛЬНЫЙ САЙТ FRESHCRAFT!!!
+                ДОБРО ПОЖАЛОВАТЬ НА ОФИЦИАЛЬНЫЙ САЙТ FRESHCRAFT
             </h1>
             <p>
             Уникальный проект, новое слово в тематике модпаков майнкрафт —
