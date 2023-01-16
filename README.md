@@ -34,6 +34,10 @@ In this project, I will present the real knowledge that I will be able to gain w
 
 ` npm install `
 
+5. After creating the ".env" file, don't forget to create the application key
+
+` php artisan key:generate `
+
 ---
 
 ### License
