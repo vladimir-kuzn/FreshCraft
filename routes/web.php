@@ -32,7 +32,7 @@ Route::name('index')->get('/', IndexController::class);
 Route::name('contacts')->get('/contacts', ContactsController::class);
 Route::name('launcher')->get('/launcher', LauncherController::class);
 
-Route::name('admin.')->middleware([Autorized::class])->group( function(){
+Route::name('admin.')->middleware('role:admin')->group( function(){
     Route::get('/admin', AdminController::class);
 });
 
