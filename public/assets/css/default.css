@@ -377,6 +377,10 @@ ul:hover .user_btn {
     color: #9a4dff;
 }
 
-.second_ul > a:nth-child(1) {
- margin-bottom: 5px;
+.second_ul > a {
+    margin-bottom: 5px;
+}
+
+.second_ul > a:last-child {
+    margin-bottom: 0px;
 }

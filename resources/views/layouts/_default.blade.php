@@ -18,6 +18,9 @@
                                 <a class="user_btn" href="#">{{ Auth::user()->getAttribute('nickname') }}</a>
                                 <ul class="second_ul">
                                     <a class="big-button" href="/profile">Профиль</a>
+                                    @role('admin')
+                                        <a class="big-button" href="{{ route('admin.') }}">ADMIN</a>
+                                    @endrole
                                     <a class="big-button" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ВЫХОД</a>
                                 </ul>
                             </ul>

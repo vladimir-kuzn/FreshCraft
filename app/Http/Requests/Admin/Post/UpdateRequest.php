@@ -25,6 +25,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
+            'category_id' => 'integer',
             'content' => 'required|string',
         ];
     }

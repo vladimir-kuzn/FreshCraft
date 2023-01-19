@@ -42,6 +42,14 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label>Категория</label>
+                                        <select class="form-control" name="category_id" id="category_id">
+                                            @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Контент</label>
                                         <textarea class="@error('content') form-control is-invalid @enderror form-control" rows="6" name="content" id="content" placeholder="Название категории"></textarea>
                                         @error('content')

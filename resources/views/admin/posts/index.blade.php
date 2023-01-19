@@ -32,7 +32,7 @@
                     </div>
                     <div class="row flex-wrap ">
                         @foreach($posts as $post)
-                        <div class="card m-1 m-md-2 col-12 overflow-hidden" style="max-height: 450px">
+                        <div class="card m-1 m-md-2 col-12 overflow-hidden" style="max-height: 450px; max-width: 810px;">
                             <div class="card-header p-1 m-1">
                                 <h3 class="card-title overflow-hidden" style="white-space: nowrap">
                                     ID:{{ $post->id }} |
@@ -61,10 +61,11 @@
                             </div>
 
                             <div class="card-body">
-                                {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("# ".$post->title) !!}
-                                {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}
-                                {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}
-                                {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml($post->content) !!}
+                                {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("## ".$post->title) !!}
+                                @if($post->category_id != Null)
+                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}
+                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("#### ".$categories->find($post->category_id)->getAttribute('title')) !!}
+                                @endif
                             </div>
 
                         </div>
