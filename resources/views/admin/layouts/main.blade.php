@@ -16,8 +16,16 @@
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
+    <!-- Dropzone -->
+    <link rel="stylesheet" href="{{ asset('plugins/dropzone/dropzone.css') }}">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/b53d0c6151.js" crossorigin="anonymous"></script>
+
+    <style>
+        .card-body > p > img {
+            width: 100%;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -86,8 +94,21 @@
 </script>
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
-<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('plugins/dropzone/dropzone-amd-module.js') }}"></script>
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+<script>
+    // If you are using CommonJS modules:
+    const { Dropzone } = require("dropzone");
+
+    // If you are using an older version than Dropzone 6.0.0,
+    // then you need to disabled the autoDiscover behaviour here:
+    Dropzone.autoDiscover = false;
+
+    let myDropzone = new Dropzone("#my-form");
+    myDropzone.on("addedfile", file => {
+        console.log(`File added: ${file.name}`);
+    });
+</script>
 </body>
 </html>

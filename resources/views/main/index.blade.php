@@ -15,7 +15,11 @@
             <br> с проектом FreshCraft.<br>
             Освежи впечатление от выживания и получи незабываемые ощущения от игрового процесса!
         </div>
-        <a href="/launcher" class="big-button">ПОЛУЧИТЬ ЛАУНЧЕР</a>
+        <a class="gui_button" href="{{ route('launcher') }}">
+            <div class="horisontal"></div>
+            <p style="font-size: 24px">ИГРАТЬ!</p>
+            <div class="vertical"></div>
+        </a>
     </div>
 </section>
 
@@ -28,12 +32,6 @@
         <div class="more-games_wrapper">
             <h1>ВСЕ ПРОЕКТЫ FRESHCRAFT</h1>
             <div class="container_wrapper">
-                <a href="#" class="btn_ news_btn big-button">
-                    <svg viewBox="0 0 512 512">
-                        <path d="M96 288v64h64v64h64v64h64V288h192v-64H288V32h-64v64h-64v64H96v64H32v64h64z"></path>
-                    </svg>
-                </a>
-
                 <div class="more_containers">
                     <div class="content_container">
                         <img src="{{asset('assets/images/covers/Fantasy-GrayScale.webp')}}">
@@ -66,12 +64,6 @@
                         </p>
                     </div>
                 </div>
-
-                <a href="#" class="btn_ news_btn big-button">
-                    <svg viewBox="0 0 512 512">
-                        <path d="M416 224v-64h-64V96h-64V32h-64v192H32v64h192v192h64v-64h64v-64h64v-64h64v-64h-64z"></path>
-                    </svg>
-                </a>
             </div>
         </div>
         <div class="corner corn-bottom">
@@ -130,8 +122,11 @@
                 </p>
             </div>
         </div>
-
-        <a href="#" class="big-button" style="margin-top:25px;">ПОДОРОБНЕЕ...</a>
+        <a class="gui_button" style="margin-top:25px;" href="#">
+            <div class="horisontal"></div>
+            <p>ПОДОРОБНЕЕ...</p>
+            <div class="vertical"></div>
+        </a>
     </div>
     <div class="trans-bottom"></div>
 </section>
@@ -140,12 +135,6 @@
     <div class="news_container">
         <h1>ОБНОВЛЕНИЯ И НОВОСТИ</h1>
         <div class="container_wrapper">
-            <a href="#" class="btn_ news_btn big-button">
-                <svg viewBox="0 0 512 512">
-                    <path d="M96 288v64h64v64h64v64h64V288h192v-64H288V32h-64v64h-64v64H96v64H32v64h64z"></path>
-                </svg>
-            </a>
-
             <div class="more_containers">
                 <div class="content_container">
                     <img src="{{asset('assets/images/1_tmp/cover_news.jpg')}}">
@@ -169,14 +158,12 @@
                     </p>
                 </div>
             </div>
-
-            <a href="#" class="btn_ news_btn big-button">
-                <svg viewBox="0 0 512 512">
-                    <path d="M416 224v-64h-64V96h-64V32h-64v192H32v64h192v192h64v-64h64v-64h64v-64h64v-64h-64z"></path>
-                </svg>
-            </a>
         </div>
-        <a href="#" class="big-button">БОЛЬШЕ</a>
+        <a class="gui_button" style="margin-top:25px;" href="#">
+            <div class="horisontal"></div>
+            <p>БОЛЬШЕ</p>
+            <div class="vertical"></div>
+        </a>
     </div>
 </section>
 @endsection

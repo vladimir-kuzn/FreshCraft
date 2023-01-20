@@ -14,7 +14,6 @@ h1 {
 p {
     font-family: "Noto Sans";
     font-size: 18px;
-    line-height: 26px;
 }
 
 body {
@@ -35,86 +34,82 @@ header {
     box-shadow: 0 2px 15px black;
 }
 
-input {
-    outline: none;
-}
-
 header img {
     width: 230px;
     pointer-events: none;
 }
 
-header a {
+header .header__links > a, .button_login {
     font-weight: 600;
     color: white;
     text-decoration: none;
 }
 
-/* АНИМАЦИЯ БОЛЬШОЙ КНОПКИ */
-
-@-webkit-keyframes sheen {
-    0% {
-        transform: skewY(-45deg) translateX(0);
-    }
-    100% {
-        transform: skewY(-45deg) translateX(12.5em);
-    }
-  }
-  @keyframes sheen {
-    0% {
-        transform: skewY(-45deg) translateX(0);
-    }
-    100% {
-        transform: skewY(-45deg) translateX(12.5em);
-    }
-  }
-
-  .big-button {
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: #9a4dff;
-    border: 2px solid #2b1d3b;
+  /* ================== */
+.gui_button {
     display: flex;
-    width: max-content;
-    text-transform: uppercase;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    overflow: hidden;
-    padding: 15px 25px;
-    font-weight: 700;
-    text-shadow: 1px 1px #3b3d3e;
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin: 0;
-  }
-  .big-button:before {
-    content: "";
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 100%;
-    width: 3em;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: -4.5em;
-    transform: skewX(-45deg) translateX(0);
-    transition: none;
-  }
-
-  .big-button:hover {
+}
+.gui_button > p {
+    font-family: 'Press Start 2P', cursive;
+    color: #fefefe;
     background-color: #9a4dff;
-    color: white;
-    border-bottom: 4px solid #2b1d3b;
-    border-right: 4px solid #2b1d3b;
-    border-top: 0;
-    border-left: 0;
-    text-shadow: 2px 2px #3b3d3e;
-  }
-
-  .big-button:hover:before {
-    transform: skewX(-45deg) translateX(21.5em);
-    transition: all 0.7s ease-in-out;
-  }
-
+    font-size: 18px;
+    padding: 6px 3px 3px 5px;
+    z-index: 2;
+    margin: 0;
+    text-shadow: 2px 2px 0px #000000;
+    outline: solid #7b3dcc 3px;
+}
+/*======== FOR AUTH FORM ========*/
+.gui_button > p > img {
+    height: 24px;
+    margin-right: 5px;
+}
+/*======== /FOR AUTH FORM ========*/
+.gui_button > .horisontal {
+    position: absolute;
+    background-color: #7b3dcc;
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+    border: solid black 3px;
+}
+.gui_button > .vertical {
+    position: absolute;
+    background-color: #7b3dcc;
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+    border: solid black 3px;
+}
+.gui_button:hover p {
+    background-color: #7b3dcc;
+    text-shadow: 3px 3px 0px #000000;
+    outline: solid #9a4dff 3px;
+}
+.gui_button:hover .vertical {
+    background-color: #9a4dff;
+}
+.gui_button:hover .horisontal {
+    background-color: #9a4dff;
+}
+.gui_button:active p {
+    background-color: #6232A3;
+    color: darkgray;
+    text-shadow: 4px 4px 0px #000000;
+}
+.gui_button:active .vertical {
+    border: solid darkgray 2px;
+}
+.gui_button:active .horisontal {
+    border: solid darkgray 2px;
+}
   /* ================== */
 
 .header__container {
@@ -139,16 +134,16 @@ header a {
     margin-left: 30px;
 }
 
+.header__links a {
+    margin-right: 20px;
+}
+
 .header__logo {
     position: absolute;
 }
 
 .header__logo a {
     display: inline-block;
-}
-
-.header__links a {
-    margin-right: 20px;
 }
 
 .header__getfresh {
@@ -161,21 +156,6 @@ header a {
 
 .button_login {
     margin-right: 20px;
-}
-
-.btn_ {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    background-color: #9a4dff;
-    min-width: 32px;
-    height: 32px;
-}
-
-.btn_ svg {
-    width: 32px;
-    fill: white;
 }
 
 .subs_on_news {
@@ -306,18 +286,15 @@ footer {
     margin: 1px 0;
 }
 
-#logout {
-    position: relative;
-    display: inline-block;
-    line-height: 16px;
-}
-
 .user_btn {
     margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: end;
     position: relative;
+    text-decoration: none;
+    color: #9a4dff;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .user_btn::before {
@@ -327,37 +304,26 @@ footer {
     top: 3px;
 }
 
-.user_do {
-    background-color: #111111;
-    border: 2px solid #9a4dff; ;
-    position: absolute;
-    width: 124px;
-    height: 124px;
-}
-
 ul {
     display: flex;
     flex-direction: column;
-    padding: 0px;
+    padding: 0;
     align-items: end;
 }
 
 .second_ul {
     display: none;
-
     position: absolute;
     flex-direction: column;
-    margin-top: 30px;
-    background-color: #111111;
+    background-color: rgba(17, 17, 17, 0.8);
     width: min-content;
-    padding: 5px;
+    margin-top: 24px;
+    padding: 15px 5px;
+    align-items: center;
 }
 
 .second_ul a {
-    width: initial;
-    font-size: 15px;
-    padding: 10px;
-    justify-content: center;
+    margin: 15px 8px;
 }
 
 ul:hover .user_btn::before {
@@ -366,7 +332,8 @@ ul:hover .user_btn::before {
 
 ul:hover .second_ul {
     display: flex;
-    align-items: normal;
+    align-items: center;
+    transform: translateX(-45px);
 }
 
 .user_btn:hover {
@@ -377,6 +344,10 @@ ul:hover .user_btn {
     color: #9a4dff;
 }
 
-.second_ul > a:nth-child(1) {
- margin-bottom: 5px;
+.second_ul > a {
+    margin-bottom: 5px;
+}
+
+.second_ul > a:last-child {
+    margin-bottom: 0;
 }
