@@ -11,12 +11,16 @@
                 FRESHCRAFT LAUNCHER
             </h1>
             <p>
-                Кстати, акционеры крупнейших компаний 
-                формируют глобальную экономическую сеть и при 
+                Кстати, акционеры крупнейших компаний
+                формируют глобальную экономическую сеть и при
                 этом — функционально разнесены на независимые элементы!
             </p>
         </div>
-        <a href="#" class="big-button">ЗАГРУЗИТЬ</a>
+        <a class="gui_button" href="#">
+            <div class="horisontal"></div>
+            <p style="font-size: 24px">СКАЧАТЬ</p>
+            <div class="vertical"></div>
+        </a>
     </div>
 </section>
 
@@ -24,10 +28,10 @@
     <div class="news_container">
         <h1>СКРИНШОТЫ</h1>
         <div class="container_wrapper">
-            <a href="#" class="btn_ news_btn big-button">
-                <svg viewBox="0 0 512 512">
-                    <path d="M96 288v64h64v64h64v64h64V288h192v-64H288V32h-64v64h-64v64H96v64H32v64h64z"></path>
-                </svg>
+            <a class="gui_button" href="#">
+                <div class="horisontal"></div>
+                <p><-</p>
+                <div class="vertical"></div>
             </a>
 
             <div class="more_containers">
@@ -42,10 +46,10 @@
                 </div>
             </div>
 
-            <a href="#" class="btn_ news_btn big-button">
-                <svg viewBox="0 0 512 512">
-                    <path d="M416 224v-64h-64V96h-64V32h-64v192H32v64h192v192h64v-64h64v-64h64v-64h64v-64h-64z"></path>
-                </svg>
+            <a class="gui_button" href="#">
+                <div class="horisontal"></div>
+                <p>-></p>
+                <div class="vertical"></div>
             </a>
         </div>
     </div>
@@ -65,10 +69,10 @@
     </div>
     <br>
     <h1>ВИДЕО-ТУТОРИАЛ</h1>
-    <iframe width="560" height="315" 
-    src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    <iframe width="560" height="315"
+    src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
     style="margin-bottom:50px;"></iframe>
 </section>

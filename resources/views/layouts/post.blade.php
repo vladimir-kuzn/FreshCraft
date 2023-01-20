@@ -6,10 +6,10 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=0.4">
 
-        <title>FreshCraft | Контакты</title>
+        <title>{{ $post->title }} | FreshCraft</title>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="stylesheet" href="{{ asset('assets/css/support.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/post.css') }}">
         <!-- for header and footer -->
         <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">

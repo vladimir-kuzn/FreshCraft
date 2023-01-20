@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main\IndexController;
 use App\Http\Controllers\Main\ContactsController;
 use App\Http\Controllers\Main\LauncherController;
+use App\Http\Controllers\Main\MainPostController;
 use App\Http\Controllers\Admin\Main\AdminController;
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Category\CategoryCreateController;
@@ -45,6 +46,7 @@ Route::name('index')->get('/', IndexController::class);
 
 Route::name('contacts')->get('/contacts', ContactsController::class);
 Route::name('launcher')->get('/launcher', LauncherController::class);
+Route::name('post')->get('/post/{post}', MainPostController::class);
 
 
  Route::name('admin.')->prefix('admin')->middleware('Auth')->middleware('role:admin')->group(function () {

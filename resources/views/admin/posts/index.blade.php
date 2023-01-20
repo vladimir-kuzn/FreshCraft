@@ -32,13 +32,13 @@
                     </div>
                     <div class="row flex-wrap ">
                         @foreach($posts as $post)
-                        <div class="card m-1 m-md-2 col-12 overflow-hidden" style="max-height: 450px; max-width: 810px;">
+                        <div class="card m-1 m-md-2 col-12 overflow-hidden" style=" max-width: 810px;">
                             <div class="card-header p-1 m-1">
                                 <h3 class="card-title overflow-hidden" style="white-space: nowrap">
                                     ID:{{ $post->id }} |
                                 </h3>
                                 <h3 class="card-title col-6 row">
-                                    <a href="{{ route('admin.posts.show', $post->id) }}">
+                                    <a href="{{ route('post', $post->id) }}" target="_blank">
                                         <i class="far fa-eye"></i>
                                     </a>
                                     <a class="text-success ml-3"
@@ -61,6 +61,11 @@
                             </div>
 
                             <div class="card-body">
+                                @if($post->image != Null)
+
+                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("![image](/storage/images/".$post->image.")") !!}
+                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}
+                                @endif
                                 {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("## ".$post->title) !!}
                                 @if($post->category_id != Null)
                                     {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}

@@ -17,11 +17,23 @@
                             <ul class="main_ul">
                                 <a class="user_btn" href="#">{{ Auth::user()->getAttribute('nickname') }}</a>
                                 <ul class="second_ul">
-                                    <a class="big-button" href="/profile">Профиль</a>
+                                    <a class="gui_button" href="#">
+                                        <div class="horisontal"></div>
+                                        <p>Профиль</p>
+                                        <div class="vertical"></div>
+                                    </a>
                                     @role('admin')
-                                        <a class="big-button" href="{{ route('admin.') }}">ADMIN</a>
+                                        <a class="gui_button" href="{{ route('admin.') }}">
+                                            <div class="horisontal"></div>
+                                            <p>ADMIN</p>
+                                            <div class="vertical"></div>
+                                        </a>
                                     @endrole
-                                    <a class="big-button" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ВЫХОД</a>
+                                    <a class="gui_button" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <div class="horisontal"></div>
+                                        <p>Выход</p>
+                                        <div class="vertical"></div>
+                                    </a>
                                 </ul>
                             </ul>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none">
@@ -30,7 +42,11 @@
                         @else
                             <a class="button_login" href="{{ route('login') }}">ВОЙТИ</a>
                         @endif
-                        <a href="{{ route('launcher') }}" class="big-button">ПОЛУЧИТЬ ЛАУНЧЕР</a>
+                        <a class="gui_button" href="{{ route('launcher') }}">
+                            <div class="horisontal"></div>
+                            <p>ПОЛУЧИТЬ ЛАУНЧЕР</p>
+                            <div class="vertical"></div>
+                        </a>
                     </div>
                 </div>
 

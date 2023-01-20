@@ -11,14 +11,16 @@
                     <span class="">
                         Вход
                     </span>
-                    <div class="submit">
-                        <a href="#" class="big-button">
-                            <img src="{{asset('assets/images/socials/discord-svg.svg')}}" alt="DISCORD">
-                            Discord
+                    <div class="submit_row">
+                        <a class="gui_button" href="#" style="margin-right: 20px;">
+                            <div class="horisontal"></div>
+                            <p> <img src="{{asset('assets/images/socials/discord-svg.svg')}}" alt="DISCORD">Discord</p>
+                            <div class="vertical"></div>
                         </a>
-                        <a href="#" class="big-button">
-                            <img src="{{asset('assets/images/socials/microsoft-svg.svg')}}" alt="MICROSOFT">
-                            Microsoft
+                        <a class="gui_button" href="#">
+                            <div class="horisontal"></div>
+                            <p> <img src="{{asset('assets/images/socials/microsoft-svg.svg')}}" alt="DISCORD">Microsoft</p>
+                            <div class="vertical"></div>
                         </a>
                     </div>
                     <div class="label_input">
@@ -51,19 +53,22 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="">
-                        <input class="form-check-input" type="checkbox" name="remember"
-                               id="remember" {{ old('remember') ? 'checked' : '' }}>
-                        <label class="form-check-label" for="remember">
-                            {{ __('Запомнить') }}
+                    <div style="margin-bottom: 10px">
+                        <label class="custom-checkbox" for="remember">
+                            <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <span>Запомнить</span>
                         </label>
                     </div>
                     <div class="submit">
-                        <button type="submit" class="big-button">
-                            Войти
-                        </button>
-                        <a href="{{ route('register') }}" class="big-button">
-                            РЕГИСТРАЦИЯ
+                        <a class="gui_button" href="{{ route('login') }}" onclick="event.preventDefault(); document.getElementById('form_auth').submit();">
+                            <div class="horisontal"></div>
+                            <p>Войти</p>
+                            <div class="vertical"></div>
+                        </a>
+                        <a class="gui_button" href="{{ route('register') }}" style="margin-top: 20px;">
+                            <div class="horisontal"></div>
+                            <p>Регистрация</p>
+                            <div class="vertical"></div>
                         </a>
                     </div>
                 </form>
