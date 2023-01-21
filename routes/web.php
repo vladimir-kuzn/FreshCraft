@@ -22,6 +22,8 @@ use App\Http\Controllers\Admin\Post\PostShowController;
 use App\Http\Controllers\Admin\Post\PostEditController;
 use App\Http\Controllers\Admin\Post\PostUpdateController;
 use App\Http\Controllers\Admin\Post\PostDestroyController;
+use App\Http\Controllers\Admin\Post\GetImagesController;
+use App\Http\Controllers\Admin\Post\DelImagesController;
 //use App\Http\Controllers\Admin\Pack\PackController;
 //use App\Http\Controllers\Admin\Pack\PackCreateController;
 //use App\Http\Controllers\Admin\Pack\PackStoreController;
@@ -75,7 +77,13 @@ Route::name('post')->get('/post/{post}', MainPostController::class);
          Route::get('/{post}/edit', PostEditController::class)->name('edit');
          Route::patch('/{post}', PostUpdateController::class)->name('update');
          Route::delete('/{post}', PostDestroyController::class)->name('destroy');
+
      })->name('posts');
+
+     Route::name('images.')->prefix('images')->group(function () {
+         Route::get('/', GetImagesController::class)->name('get');
+         Route::get('/del', DelImagesController::class)->name('del');
+     });
 //
 //     Route::name('packs.')->prefix('packs')->group(function () {
 //         //admin/packs

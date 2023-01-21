@@ -52,7 +52,7 @@ body {
   align-items: center; }
 
 .card {
-    background-color: #474747;
+    background-color: rgba(71, 71, 71, 0.5);
     max-width: 200px;
     padding: 10px 10px;
     border: 3px solid #474747;
@@ -96,8 +96,9 @@ body {
         width: 150px;
         height: 150px;
         filter: blur(25px);
-        opacity: 75%;
-        translate: 0px -25px; }
+        opacity: 25%;
+        translate: 0 -25px;
+        transition: all 0.3s ease-in-out;}
   .card__title {
     font-size: 20px;
     text-align: center; }
@@ -183,3 +184,6 @@ body {
 .big-button:hover:before {
   transform: skewX(-45deg) translateX(21.5em);
   transition: all 0.7s ease-in-out; }
+.card:hover .card__image_blur > img {
+    opacity: 75%;
+}

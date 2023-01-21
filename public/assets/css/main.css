@@ -16,7 +16,15 @@
     text-transform: uppercase;
 }
 
-.sect__welcome img {
+.sect__welcome .slide_image {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.sect__welcome .slide_image > img {
     z-index: -1;
     position: absolute;
     width: 100%;
@@ -151,10 +159,10 @@
 }
 
 .server_info__wrapper {
-    margin: 0 auto; 
-    width: min-content; 
-    display: flex; 
-    align-items: center; 
+    margin: 0 auto;
+    width: min-content;
+    display: flex;
+    align-items: center;
     flex-direction: column;
 }
 

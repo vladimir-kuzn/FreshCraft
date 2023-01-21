@@ -44,7 +44,7 @@
                         @endif
                         <a class="gui_button" href="{{ route('launcher') }}">
                             <div class="horisontal"></div>
-                            <p>ПОЛУЧИТЬ ЛАУНЧЕР</p>
+                            <p style="font-size: 28px">ПОЛУЧИТЬ ЛАУНЧЕР</p>
                             <div class="vertical"></div>
                         </a>
                     </div>
@@ -60,23 +60,6 @@
 
         @yield('content-main')
 
-        <section class="subs_on_news">
-            <h2>Подписаться на новости</h2>
-            <div class="more_links">
-                <a href="#" class="link_youtube">
-                    <img src="{{asset('assets/images/socials/youtube-svg.svg')}}" alt="link">
-                </a>
-                <a href="#" class="link_vk">
-                    <img src="{{asset('assets/images/socials/vkontakte-svg.svg')}}" alt="link">
-                </a>
-                <a href="#" class="link_discord">
-                    <img src="{{asset('assets/images/socials/discord-svg.svg')}}" alt="link">
-                </a>
-                <a href="#" class="link_twitter">
-                    <img src="{{asset('assets/images/socials/twitter-svg.svg')}}" alt="link">
-                </a>
-            </div>
-        </section>
         <footer>
             <div class="footer_wrapper">
                 <div class="info-legal">
