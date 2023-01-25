@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Post;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
-class PostCreateController extends Controller
+class CreateController extends BaseController
 {
     public function __invoke()
     {

@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Admin\Post;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
-class PostController extends Controller
+class IndexController extends BaseController
 {
     public function __invoke()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
         $categories = Category::all();
         return view('admin.posts.index', compact('posts', 'categories'));
     }

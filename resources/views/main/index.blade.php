@@ -2,7 +2,19 @@
 
 @section('content-main')
 <section class="sect__welcome">
-    <img src="{{asset('assets/images/posters/poster (5).webp')}}" alt="background">
+    <div class="slide_image">
+        <img src="{{asset('assets/images/posters/poster (21).webp')}}" alt="background" class="show">
+        <img src="{{asset('assets/images/posters/poster (1).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (2).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (5).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (6).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (9).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (14).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (20).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (18).webp')}}" alt="background" class="">
+        <img src="{{asset('assets/images/posters/poster (30).webp')}}" alt="background" class="">
+    </div>
+
     <div class="filter_on_poster"></div>
     <div class="welcome_container">
         <div class="weclome_wrapper">
@@ -17,7 +29,7 @@
         </div>
         <a class="gui_button" href="{{ route('launcher') }}">
             <div class="horisontal"></div>
-            <p style="font-size: 24px">ИГРАТЬ!</p>
+            <p style="width: 200px">ИГРАТЬ!</p>
             <div class="vertical"></div>
         </a>
     </div>

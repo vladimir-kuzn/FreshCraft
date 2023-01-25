@@ -1,6 +1,18 @@
 @extends('admin.layouts.main')
 
 @section('content')
+
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                <button data-hystclose class="hystmodal__close">Close</button>
+                <a id="update_getinages" href="#" onClick="getImages(); return false;">Обновить</a>
+                <table class="list_images">
+
+                </table>
+            </div>
+        </div>
+    </div>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -26,9 +38,10 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="">
-                    <div class="col-7 mb-3">
-                        <a href="{{ route('admin.posts.create') }}" class="col-2 btn btn-block btn-primary">Создать
+                    <div class="col-4 mb-3 row">
+                        <a href="{{ route('admin.posts.create') }}" class="col-4 btn btn-block btn-primary mr-1">Создать
                             новый</a>
+                        <a href="#" class="col-4 btn btn-block btn-primary" data-hystmodal="#myModal" onClick="getImages(); return false;">Изображения</a>
                     </div>
                     <div class="row flex-wrap ">
                         @foreach($posts as $post)
@@ -63,7 +76,7 @@
                             <div class="card-body">
                                 @if($post->image != Null)
 
-                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("![image](/storage/images/".$post->image.")") !!}
+                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("![image](/storage/images/forPost/".$post->image.")") !!}
                                     {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}
                                 @endif
                                 {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("## ".$post->title) !!}

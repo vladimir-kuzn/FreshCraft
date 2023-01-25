@@ -18,12 +18,23 @@
     <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Dropzone -->
     <link rel="stylesheet" href="{{ asset('plugins/dropzone/dropzone.css') }}">
+    <!-- hystModal -->
+    <link rel="stylesheet" href="{{ asset('plugins/hystModal/hystmodal.min.css') }}">
+    <script src="{{ asset('plugins/hystModal/hystmodal.min.js') }}"></script>
+    <!-- Clipboard.js -->
+    <script src="{{ asset('plugins/clipboard.min.js') }}"></script>
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/b53d0c6151.js" crossorigin="anonymous"></script>
 
     <style>
         .card-body > p > img {
             width: 100%;
+        }
+        .imageInStorage > td {
+            height: 100px;
+        }
+        .imageInStorage > td > img {
+            max-height: 100%;
         }
     </style>
 </head>
@@ -98,16 +109,81 @@
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <script>
-    // If you are using CommonJS modules:
-    const { Dropzone } = require("dropzone");
+    const myModal = new HystModal({
+        linkAttributeName: "data-hystmodal",
+        //settings (optional). see Configuration
+    });
+</script>
+<script>
+    function getImages() {
+        $('#update_getinages').remove();
+        $.ajax({
+            url: 'images',
+            dataType: 'json',
+            method: 'get',
+            success: function (data) {
+                $('.hystmodal__window').append('<a id="update_getinages" href="#" onClick="getImages(); return false;">Обновить</a>')
+                for (var i = 0; i < data.length; i++) {
+                    data[i] = data[i].slice(22);
+                    data[i] = "{{ Request::getSchemeAndHttpHost() }}/storage/images/forPost/" + data[i];
+                }
+                $('.imageInStorage').remove();
+                var index;
+                for (index = 0; index < data.length; ++index) {
+                    $('.list_images').append($(
+                        '<tr class="element_' + index + ' imageInStorage">' +
+                            '<td>' +
+                                '<img src="' + data[index] + '">' +
+                            '</td>' +
+                            '<td>' +
+                                '<a href="#" class="link_" data-clipboard-text="![Альтернативный текст](' + data[index] + ')">' +
+                                    data[index] +
+                                '</a>' +
+                            '</td>' +
+                            '<td>' +
+                                '<a href="#" onClick="del_image(' + index + '); return false;" >' +
+                                    'Удалить' +
+                                '</a>' +
+                            '</td>' +
+                        '</tr>'
+                    ))
+                }
+            },
+        });
+    }
 
-    // If you are using an older version than Dropzone 6.0.0,
-    // then you need to disabled the autoDiscover behaviour here:
-    Dropzone.autoDiscover = false;
+    new ClipboardJS('.link_');
 
-    let myDropzone = new Dropzone("#my-form");
-    myDropzone.on("addedfile", file => {
-        console.log(`File added: ${file.name}`);
+    function del_image(image) {
+        $.ajax({
+            url: 'images/del',
+            dataType: 'html',
+            method: 'get',
+            data: {image: image},
+            success: function (message) {
+                getImages()
+            }
+        })
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        $("input[name='create']").click(function(){
+            var form =  $(this).closest('form');
+            form.attr('target', '_blank');
+            form.submit();
+            form.attr('target', '');
+        });
+        return false;
+    });
+    $(document).ready(function(){
+        $("input[name='edit']").click(function(){
+            var form =  $(this).closest('form');
+            form.attr('target', '_blank');
+            form.submit();
+            form.attr('target', '');
+        });
+        return false;
     });
 </script>
 </body>
