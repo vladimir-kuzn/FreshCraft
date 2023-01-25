@@ -26,81 +26,46 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row justify-content-center">
-                    <div class="col-8">
-                        <form action="{{ route('admin.posts.store') }}" method="POST">
-                            @csrf
+                    <div class="w-100">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h3 class="card-title">Новый пост</h3>
                                 </div>
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label>Название</label>
-                                        <input type="text" class="@error('title') form-control is-invalid @enderror form-control" name="title" id="title" placeholder="Название поста">
-                                        @error('title')
-                                            <div class="text-danger">Неверное название поста</div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Категория</label>
-                                        <select class="form-control" name="category_id" id="category_id">
-                                            @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Контент</label>
-                                        <textarea class="@error('content') form-control is-invalid @enderror form-control" rows="6" name="content" id="content" placeholder="Контент"></textarea>
-                                        @error('content')
-                                        <div class="text-danger">А где?</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Создать</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-8">
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">Файлы изображений</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-body">
-                                    <form action="{{ route('admin.posts.store') }}" class="dropzone" method="POST" enctype="multipart/form-data">
-                                        @csrf
-                                        <div id="actions" class="row">
-                                            <div class="col-lg-6">
-                                                <div class="btn-group w-100">
-                                                    <span class="btn btn-success col fileinput-button dz-clickable">
-                                                    <i class="fas fa-plus"></i>
-                                                    <span>Add files</span>
-                                                    </span>
-                                                    <input type="file" name="file" style="display: none"/>
-                                                    <button type="reset" class="btn btn-warning col cancel">
-                                                        <i class="fas fa-times-circle"></i>
-                                                        <span>Cancel upload</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 d-flex align-items-center">
-                                                <div class="fileupload-process w-100">
-                                                    <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="opacity: 0;">
-                                                        <div class="progress-bar progress-bar-success" style="width: 100%;" data-dz-uploadprogress=""></div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <form action="{{ route('admin.posts.store') }}" method="POST" target="_blank">
+                                    @csrf
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label>Название</label>
+                                            <input type="text" class="@error('title') form-control is-invalid @enderror form-control" name="title" id="title" placeholder="Название поста" value="{{ old('title') }}">
+                                            @error('title')
+                                                <div class="text-danger">Неверное название поста</div>
+                                            @enderror
                                         </div>
-                                    </form>
-                                    <div class="table table-striped files" id="previews">
-
+                                        <div class="form-group">
+                                            <label>Категория</label>
+                                            <select class="form-control @error('category_id') form-control is-invalid @enderror " name="category_id" id="category_id">
+                                                <option value="">*Обязательно_выбрать!*</option>
+                                                @foreach($categories as $category)
+                                                <option @if(old('category_id') == $category->id) selected @endif
+                                                    value="{{$category->id}}">{{$category->title}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Контент</label>
+                                            <textarea class="@error('content') form-control is-invalid @enderror form-control" rows="6" name="content" id="content" placeholder="Контент в MarkDown">{{ old('content') }}</textarea>
+                                            @error('content')
+                                            <div class="text-danger">А где?</div>
+                                            @enderror
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="card-footer">
+                                        <input class="btn btn-primary" type="submit" name="create" value="Создать">
+                                        <input class="btn btn-primary" type="submit" name="preview" value="Превью">
+                                    </div>
+                                </form>
                             </div>
-                        </div>
+
                     </div>
                 </div>
                 <!-- /.row -->

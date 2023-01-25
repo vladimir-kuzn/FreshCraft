@@ -27,7 +27,8 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-4">
-                        <form action="{{ route('admin.posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.posts.update', $post->id) }}" method="POST"
+                              enctype="multipart/form-data" target="_blank">
                             @csrf
                             @method('PATCH')
                             <div class="card card-primary">
@@ -37,39 +38,45 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Название</label>
-                                        <input type="text" class="@error('title') form-control is-invalid @enderror form-control" name="title" id="title" placeholder="Название категории"
-                                        value="{{ $post->title }}">
+                                        <input type="text"
+                                               class="@error('title') form-control is-invalid @enderror form-control"
+                                               name="title" id="title" placeholder="Название поста"
+                                               value="{{ $post->title }}">
                                         @error('title')
-                                            <div class="text-danger">Неверное название поста</div>
+                                        <div class="text-danger">Неверное название поста</div>
                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Категория</label>
-                                        <select class="form-control" name="category_id" id="category_id">
+                                        <select
+                                            class="form-control @error('category_id') form-control is-invalid @enderror "
+                                            name="category_id" id="category_id">
+                                            <option value="">*Обязательно_выбрать!*</option>
                                             @foreach($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                                @if($category->id == $post->category_id)
+                                                    <option value="{{$category->id}}"
+                                                            selected>{{$category->title}}</option>
+                                                @else
+                                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Контент</label>
-                                        <textarea class="@error('content') form-control is-invalid @enderror form-control" rows="6" name="content" id="content" placeholder="Название категории">{{ $post->content }}</textarea>
+                                        <textarea
+                                            class="@error('content') form-control is-invalid @enderror form-control"
+                                            rows="6" name="content" id="content" placeholder="Контент в MarkDown">
+                                            {{ $post->content }}
+                                        </textarea>
                                         @error('content')
-                                        <div class="text-danger">Что-то не так</div>
+                                        <div class="text-danger">А где?</div>
                                         @enderror
                                     </div>
-                                    {{--
-                                    <div class="form-group">
-                                        <label>Изображения</label>
-                                        <input type="file" class="custom-file-input"  name="file" id="file">
-                                        @error('file')
-                                        <div class="text-danger">Что-то не так c загрузкой</div>
-                                        @enderror
-                                    </div>
-                                    --}}
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Обновить</button>
+                                    <input class="btn btn-primary" type="submit" name="edit" value="Изменить">
+                                    <input class="btn btn-primary" type="submit" name="preview" value="Превью">
                                 </div>
                             </div>
                         </form>

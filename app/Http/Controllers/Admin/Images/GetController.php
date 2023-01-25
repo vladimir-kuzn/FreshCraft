@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Post;
+namespace App\Http\Controllers\Admin\Images;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class GetImagesController extends Controller
+class GetController extends Controller
 {
     public function __invoke()
     {

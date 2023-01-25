@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Post;
+namespace App\Http\Controllers\Admin\Images;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
-class DelImagesController extends Controller
+class DelController extends Controller
 {
     public function __invoke(Request $request)
     {

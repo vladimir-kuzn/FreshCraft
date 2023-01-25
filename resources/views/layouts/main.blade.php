@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
         <!-- for header and footer -->
         <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <script src="{{ asset('assets/js/slider_main.js')}}"></script>
 
         <style>

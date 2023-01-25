@@ -1,37 +1,16 @@
 <?php
 
+use App\Http\Controllers\Main as Main;
+use App\Http\Controllers\Admin\Main\AdminController;
+use App\Http\Controllers\Admin\Category as Category;
+use App\Http\Controllers\Admin\Images as Images;
+use App\Http\Controllers\Admin\Post as Post;
+//use App\Http\Controllers\Admin\Pack AS Pack;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Main\IndexController;
-use App\Http\Controllers\Main\ContactsController;
-use App\Http\Controllers\Main\LauncherController;
-use App\Http\Controllers\Main\MainPostController;
-use App\Http\Controllers\Admin\Main\AdminController;
-use App\Http\Controllers\Admin\Category\CategoryController;
-use App\Http\Controllers\Admin\Category\CategoryCreateController;
-use App\Http\Controllers\Admin\Category\CategoryStoreController;
-use App\Http\Controllers\Admin\Category\CategoryShowController;
-use App\Http\Controllers\Admin\Category\CategoryEditController;
-use App\Http\Controllers\Admin\Category\CategoryUpdateController;
-use App\Http\Controllers\Admin\Category\CategoryDestroyController;
-use App\Http\Controllers\Admin\Post\PostController;
-use App\Http\Controllers\Admin\Post\PostCreateController;
-use App\Http\Controllers\Admin\Post\PostStoreController;
-use App\Http\Controllers\Admin\Post\PostShowController;
-use App\Http\Controllers\Admin\Post\PostEditController;
-use App\Http\Controllers\Admin\Post\PostUpdateController;
-use App\Http\Controllers\Admin\Post\PostDestroyController;
-use App\Http\Controllers\Admin\Post\GetImagesController;
-use App\Http\Controllers\Admin\Post\DelImagesController;
-//use App\Http\Controllers\Admin\Pack\PackController;
-//use App\Http\Controllers\Admin\Pack\PackCreateController;
-//use App\Http\Controllers\Admin\Pack\PackStoreController;
-//use App\Http\Controllers\Admin\Pack\PackShowController;
-//use App\Http\Controllers\Admin\Pack\PackEditController;
-//use App\Http\Controllers\Admin\Pack\PackUpdateController;
-//use App\Http\Controllers\Admin\Pack\PackDestroyController;
-
+use App\Http\Controllers\Auth\Services\DiscordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,61 +22,57 @@ use App\Http\Controllers\Admin\Post\DelImagesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // Homepage
-Route::name('index')->get('/', IndexController::class);
+Route::name('index')->get('/', Main\IndexController::class);
+Route::name('contacts')->get('/contacts', Main\ContactsController::class);
+Route::name('launcher')->get('/launcher', Main\LauncherController::class);
+Route::name('post')->get('/post/{post}', Main\PostController::class);
 
-Route::name('contacts')->get('/contacts', ContactsController::class);
-Route::name('launcher')->get('/launcher', LauncherController::class);
-Route::name('post')->get('/post/{post}', MainPostController::class);
-
+// https://github.com/JakyeRU/Laravel-Discord-Authentication <3
+Route::get('discord', [DiscordController::class, 'login'])->name('discord.login');
 
  Route::name('admin.')->prefix('admin')->middleware('Auth')->middleware('role:admin')->group(function () {
      //admin
      Route::get('/', AdminController::class);
-
      Route::name('categories.')->prefix('categories')->group(function () {
          //admin/categories
-         Route::get('/', CategoryController::class);
+         Route::get('/', Category\IndexController::class);
          //admin/categories/create
-         Route::get('/create', CategoryCreateController::class)->name('create');
-         Route::post('/', CategoryStoreController::class)->name('store');
-         Route::get('/{category}', CategoryShowController::class)->name('show');
-         Route::get('/{category}/edit', CategoryEditController::class)->name('edit');
-         Route::patch('/{category}', CategoryUpdateController::class)->name('update');
-         Route::delete('/{category}', CategoryDestroyController::class)->name('destroy');
-     })->name('categories');
-
+         Route::get('/create', Category\CreateController::class)->name('create');
+         Route::post('/', Category\StoreController::class)->name('store');
+         Route::get('/{category}', Category\ShowController::class)->name('show');
+         Route::get('/{category}/edit', Category\EditController::class)->name('edit');
+         Route::patch('/{category}', Category\UpdateController::class)->name('update');
+         Route::delete('/{category}', Category\DestroyController::class)->name('destroy');
+     });
      Route::name('posts.')->prefix('posts')->group(function () {
          //admin/posts
-         Route::get('/', PostController::class);
+         Route::get('/', Post\IndexController::class);
          //admin/posts/create
-         Route::get('/create', PostCreateController::class)->name('create');
-         Route::post('/', PostStoreController::class)->name('store');
-         Route::get('/{post}', PostShowController::class)->name('show');
-         Route::get('/{post}/edit', PostEditController::class)->name('edit');
-         Route::patch('/{post}', PostUpdateController::class)->name('update');
-         Route::delete('/{post}', PostDestroyController::class)->name('destroy');
-
-     })->name('posts');
-
-     Route::name('images.')->prefix('images')->group(function () {
-         Route::get('/', GetImagesController::class)->name('get');
-         Route::get('/del', DelImagesController::class)->name('del');
+         Route::get('/create', Post\CreateController::class)->name('create');
+         Route::post('/', Post\StoreController::class)->name('store');
+         Route::get('/{post}', Post\ShowController::class)->name('show');
+         Route::get('/{post}/edit', Post\EditController::class)->name('edit');
+         Route::patch('/{post}', Post\UpdateController::class)->name('update');
+         Route::delete('/{post}', Post\DestroyController::class)->name('destroy');
      });
-//
+     Route::name('images.')->prefix('images')->group(function () {
+         Route::get('/', Images\GetController::class)->name('get');
+         Route::get('/del', Images\DelController::class)->name('del');
+     });
 //     Route::name('packs.')->prefix('packs')->group(function () {
 //         //admin/packs
-//         Route::get('/', PackController::class);
+//         Route::get('/', Pack\IndexController::class);
 //         //admin/packs/create
-//         Route::get('/create', PackCreateController::class)->name('create');
-//         Route::post('/', PackStoreController::class)->name('store');
-//         Route::get('/{pack}', PackShowController::class)->name('show');
-//         Route::get('/{pack}/edit', PackEditController::class)->name('edit');
-//         Route::patch('/{pack}', PackUpdateController::class)->name('update');
-//         Route::delete('/{pack}', PackDestroyController::class)->name('destroy');
-//     })->name('packs');
+//         Route::get('/create', Pack\CreateController::class)->name('create');
+//         Route::post('/', Pack\StoreController::class)->name('store');
+//         Route::get('/{pack}', Pack\ShowController::class)->name('show');
+//         Route::get('/{pack}/edit', Pack\EditController::class)->name('edit');
+//         Route::patch('/{pack}', Pack\UpdateController::class)->name('update');
+//         Route::delete('/{pack}', Pack\DestroyController::class)->name('destroy');
+//     });
  });
-
 
 Auth::routes();
 Auth::routes(['verify' => true]);

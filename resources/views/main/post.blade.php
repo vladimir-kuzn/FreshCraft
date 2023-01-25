@@ -17,7 +17,6 @@
                 {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("#### ".$categories->find($post->category_id)->getAttribute('title')) !!}
             </div>
         @endif
-
             {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml($post->content) !!}
     </div>
 </section>
