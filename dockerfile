@@ -19,7 +19,7 @@ COPY . /var/www
 WORKDIR /var/www
 
 # Install deps for node and php
-RUN composer update && composer install && composer dump-autoload
+RUN composer update && composer install && composer dump-autoload && php artisan optimize
 RUN npm install
 
 # Prepare user for launching
@@ -32,8 +32,6 @@ EXPOSE 9000
 
 # Prepare php
 RUN php artisan migrate && php artisan key:generate
-
-RUN composer install
 
 # F option forces FPM to stay in foreground
 CMD ["php-fpm8.1", "-F"]
