@@ -30,8 +30,7 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 RUN echo "listen = 9000" >> /etc/php/8.1/fpm/pool.d/www.conf
 EXPOSE 9000
 
-# Prepare php
-RUN php artisan migrate && php artisan key:generate
+RUN composer install --no-scripts
 
 # F option forces FPM to stay in foreground
 CMD ["php-fpm8.1", "-F"]
