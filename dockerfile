@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt-get update 
+RUN apt-get update
 
 # Without this some packages from php will require user prompt
 ENV DEBIAN_FRONTEND=noninteractive
@@ -10,7 +10,7 @@ RUN apt-get install -y curl && curl -s https://deb.nodesource.com/setup_18.x | b
     apt-get install -y nodejs && npm --version
 
 # Install php and composer
-RUN apt-get install -y php-fpm php-curl php-xml php-zip php-mysql
+RUN apt-get install -y php-fpm php-curl php-xml php-zip php-mysql php-mbstring
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php && chmod +x composer.phar && mv composer.phar /usr/bin/composer
 
