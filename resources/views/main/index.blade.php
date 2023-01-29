@@ -107,7 +107,7 @@
             <img src="{{asset('assets/images/1_tmp/Minecraft_600x360.jpeg')}}" alt="cover">
             <div class="container_text">
                 <h2>
-                    МЫ ЗА АДЕКВАТНОЕ КАМЬЮНИТИ
+                    МЫ ЗА АДЕКВАТНОЕ КОМЬЮНИТИ
                 </h2>
                 <p>
                     Столбы, засорение ландшафта, однообразные и страшные
