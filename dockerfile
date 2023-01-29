@@ -16,7 +16,6 @@ RUN php composer-setup.php && chmod +x composer.phar && mv composer.phar /usr/bi
 
 # Copy src to nginx root
 COPY . /var/www
-COPY --chown=www:www . /var/www
 WORKDIR /var/www
 
 # Install deps for node and php
