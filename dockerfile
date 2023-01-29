@@ -33,5 +33,7 @@ EXPOSE 9000
 # Prepare php
 RUN php artisan migrate && php artisan key:generate
 
+RUN composer install
+
 # F option forces FPM to stay in foreground
 CMD ["php-fpm8.1", "-F"]
