@@ -19,7 +19,7 @@ COPY . /var/www
 WORKDIR /var/www
 
 # Install deps for node and php
-RUN composer update && composer install
+RUN composer dump-autoload && composer update && composer install
 RUN npm install
 
 # Prepare user for launching
