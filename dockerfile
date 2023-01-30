@@ -36,5 +36,7 @@ RUN npm install
 
 RUN composer install --no-scripts
 
+USER root
+
 # F option forces FPM to stay in foreground
 CMD ["php-fpm8.1", "-F"]

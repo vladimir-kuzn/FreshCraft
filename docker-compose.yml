@@ -1,6 +1,5 @@
 version: '3'
 services:
-
   php-fpm:
     build:
       context: .
@@ -12,9 +11,10 @@ services:
     environment:
       SERVICE_NAME: php-fpm
       SERVICE_TAGS: dev
-    working_dir: /var/www
     volumes:
-      - ./:/var/www
+      - static-content:/var/www/public
+      - laravel-storage:/var/www/storage
+      - bootstrap-cache:/var/www/bootstrap/cache
     networks:
       - freshcraft
 
@@ -27,13 +27,17 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./:/var/www
+      - static-content:/var/www/public
       - ./nginx/:/etc/nginx/conf.d/
       - /opt/certs:/etc/nginx/certs
     networks:
       - freshcraft
 
-#Docker Networks
 networks:
   freshcraft:
     driver: bridge
+
+volumes:
+  static-content: 
+  bootstrap-cache:
+  laravel-storage:
