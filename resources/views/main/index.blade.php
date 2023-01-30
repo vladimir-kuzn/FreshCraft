@@ -29,7 +29,7 @@
         </div>
         <a class="gui_button" href="{{ route('launcher') }}">
             <div class="horisontal"></div>
-            <p style="width: 200px">ИГРАТЬ!</p>
+            <p style="padding: 5px 15px; font-size: 36px">ИГРАТЬ!</p>
             <div class="vertical"></div>
         </a>
     </div>

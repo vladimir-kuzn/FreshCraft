@@ -26,7 +26,7 @@
                 </p>
                 <a class="gui_button" target="_blank" href="https://t.me/grapecreate">
                     <div class="horisontal"></div>
-                    <p style="font-size: 28px">Перейти</p>
+                    <p>Перейти</p>
                     <div class="vertical"></div>
                 </a>
             </div>
@@ -46,7 +46,7 @@
                 </p>
                 <a class="gui_button" target="_blank" href="https://boosty.to/grapecreate">
                     <div class="horisontal"></div>
-                    <p style="font-size: 28px">Глянуть</p>
+                    <p>Глянуть</p>
                     <div class="vertical"></div>
                 </a>
             </div>
@@ -67,7 +67,7 @@
                 </p>
                 <a class="gui_button" target="_blank" href="https://www.youtube.com/channel/UCvbAKuWO0fOGxQ1mCBFAhzg">
                     <div class="horisontal"></div>
-                    <p style="font-size: 28px">Смотреть</p>
+                    <p>Смотреть</p>
                     <div class="vertical"></div>
                 </a>
             </div>
@@ -88,7 +88,7 @@
                 </p>
                 <a class="gui_button" target="_blank" href="https://discord.gg/26pmYEkfGM">
                     <div class="horisontal"></div>
-                    <p style="font-size: 28px">Общаться</p>
+                    <p>Общаться</p>
                     <div class="vertical"></div>
                 </a>
             </div>
@@ -109,7 +109,7 @@
                 </p>
                 <a class="gui_button" target="_blank" href="https://vk.com/public193542939">
                     <div class="horisontal"></div>
-                    <p style="font-size: 28px">Читать</p>
+                    <p>Читать</p>
                     <div class="vertical"></div>
                 </a>
             </div>

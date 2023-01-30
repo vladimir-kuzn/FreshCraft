@@ -8,9 +8,9 @@
             <div class="header__container">
                 <div class="header__wrapper">
                     <div class="header__links">
-                        <a href="#">СООБЩЕСТВО</a>
+                        <a href="#">НОВОСТИ</a>
                         <a href="{{ route('contacts') }}">КОНТАКТЫ</a>
-                        <a href="#">ПРАВИЛА</a>
+                        <a href="#">ПРАВИЛА СЕРВЕРА</a>
                     </div>
                     <div class="header__getfresh">
                         @if(Auth::check())
@@ -44,7 +44,7 @@
                         @endif
                         <a class="gui_button" href="{{ route('launcher') }}">
                             <div class="horisontal"></div>
-                            <p style="font-size: 28px">ПОЛУЧИТЬ ЛАУНЧЕР</p>
+                            <p>ПОЛУЧИТЬ ЛАУНЧЕР</p>
                             <div class="vertical"></div>
                         </a>
                     </div>

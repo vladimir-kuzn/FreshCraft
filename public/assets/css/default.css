@@ -58,20 +58,24 @@ header .header__links > a, .button_login {
 .gui_button > p {
     color: #fefefe;
     background-color: #9a4dff;
-    padding: 6px 3px 3px 5px;
+    padding: 0 3px 3px 5px;
     z-index: 2;
     margin: 0;
-    text-shadow: 2px 2px 0px #000000;
+    text-shadow: 2px 2px 0 #000000;
     outline: solid #7b3dcc 3px;
     font-family: "Noto Sans", serif;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /*======== FOR AUTH FORM ========*/
 .gui_button > p > img {
     height: 32px;
     margin-right: 5px;
+    filter: drop-shadow(2px 2px 0 #000000);
 }
 /*======== /FOR AUTH FORM ========*/
 .gui_button > .horisontal {
@@ -92,7 +96,7 @@ header .header__links > a, .button_login {
 }
 .gui_button:hover p {
     background-color: #7b3dcc;
-    text-shadow: 3px 3px 0px #000000;
+    text-shadow: 3px 3px 0 #000000;
     outline: solid #9a4dff 3px;
 }
 .gui_button:hover .vertical {
@@ -104,7 +108,7 @@ header .header__links > a, .button_login {
 .gui_button:active p {
     background-color: #6232A3;
     color: darkgray;
-    text-shadow: 4px 4px 0px #000000;
+    text-shadow: 4px 4px 0 #000000;
 }
 .gui_button:active .vertical {
     border: solid darkgray 2px;
