@@ -14,21 +14,25 @@ RUN apt-get install -y php-fpm php-curl php-xml php-zip php-mysql php-mbstring
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php && chmod +x composer.phar && mv composer.phar /usr/bin/composer
 
-# Copy src to nginx root
-COPY . /var/www
-WORKDIR /var/www
-
-# Install deps for node and php
-RUN composer update && composer install && composer dump-autoload && composer install --no-scripts && php artisan optimize
-RUN npm install
+# Make php-fpm listen to TCP socket
+RUN echo "listen = 9000" >> /etc/php/8.1/fpm/pool.d/www.conf
+EXPOSE 9000
 
 # Prepare user for launching
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
-# Make php-fpm listen to TCP socket
-RUN echo "listen = 9000" >> /etc/php/8.1/fpm/pool.d/www.conf
-EXPOSE 9000
+# Copy src to nginx root
+COPY . /var/www
+WORKDIR /var/www
+
+RUN chown -R www:www /var/www
+
+USER www
+
+# Install deps for node and php
+RUN composer update && composer install && composer dump-autoload && composer install --no-scripts && php artisan optimize
+RUN npm install
 
 RUN composer install --no-scripts
 
