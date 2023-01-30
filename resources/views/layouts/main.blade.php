@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=0.4">
+        <meta name="mailru-domain" content="FUfbaNDKI82NIqqo" />
 
         <title>FreshCraft | Главная страница</title>
 
