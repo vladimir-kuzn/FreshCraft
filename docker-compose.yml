@@ -12,9 +12,7 @@ services:
       SERVICE_NAME: php-fpm
       SERVICE_TAGS: dev
     volumes:
-      - static-content:/var/www/public
-      - laravel-storage:/var/www/storage
-      - bootstrap-cache:/var/www/bootstrap/cache
+      - shared-data:/var/www
     networks:
       - freshcraft
 
@@ -27,7 +25,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - static-content:/var/www/public
+      - shared-data:/var/www
       - ./nginx/:/etc/nginx/conf.d/
       - /opt/certs:/etc/nginx/certs
     networks:
@@ -38,6 +36,4 @@ networks:
     driver: bridge
 
 volumes:
-  static-content: 
-  bootstrap-cache:
-  laravel-storage:
+  shared-data: 

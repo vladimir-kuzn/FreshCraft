@@ -22,21 +22,26 @@ EXPOSE 9000
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
-# Copy src to nginx root
+# Copy files and set permissions for new user
 COPY . /var/www
 WORKDIR /var/www
-
 RUN chown -R www:www /var/www
+RUN chmod -R 755 /var/www
 
 USER www
 
 # Install deps for node and php
 RUN composer update && composer install && composer dump-autoload && composer install --no-scripts && php artisan optimize
 RUN npm install
-
 RUN composer install --no-scripts
 
+# Prepare FPM for non-root launching
 USER root
+
+RUN touch /var/log/php8.1-fpm.log && chown www:www /var/log/php8.1-fpm.log
+RUN chown www:www /run/php
+
+USER www
 
 # F option forces FPM to stay in foreground
 CMD ["php-fpm8.1", "-F"]
