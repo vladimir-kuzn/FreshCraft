@@ -13,6 +13,7 @@ services:
       SERVICE_TAGS: dev
     volumes:
       - shared-data:/var/www
+      - laravel-storage:/var/www/storage
     networks:
       - freshcraft
 
@@ -26,6 +27,7 @@ services:
       - "443:443"
     volumes:
       - shared-data:/var/www
+      - laravel-storage:/var/www/storage
       - ./nginx/:/etc/nginx/conf.d/
       - /opt/certs:/etc/nginx/certs
     networks:
@@ -37,3 +39,5 @@ networks:
 
 volumes:
   shared-data: 
+  laravel-storage:
+
