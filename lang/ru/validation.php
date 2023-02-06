@@ -118,7 +118,7 @@ return [
     'prohibited_unless' => ':attribute поле запрещено, если :other в :values.',
     'prohibits' => ':attribute поле запрещает :other от присутствия.',
     'regex' => ':attribute формат недействителен.',
-    'required' => ':attribute поле, обязательное для заполнения.',
+    'required' => 'Поле, обязательно для заполнения.',
     'required_array_keys' => ':attribute поле должно содержать записи для: :values.',
     'required_if' => ':attribute поле требуется, когда :other :value.',
     'required_if_accepted' => ':attribute поле требуется, когда :other принимается.',

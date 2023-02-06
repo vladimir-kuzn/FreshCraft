@@ -34,6 +34,11 @@
                             <p>Восстановить</p>
                             <div class="vertical"></div>
                         </a>
+                        <a class="gui_button" href="{{ route('login') }}" style="margin-top: 20px;">
+                            <div class="horisontal"></div>
+                            <p>Назад</p>
+                            <div class="vertical"></div>
+                        </a>
                     </div>
                 </form>
             </div>

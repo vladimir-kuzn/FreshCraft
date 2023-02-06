@@ -238,6 +238,10 @@ footer {
     height: 100px;
 }
 
+.footer_logos a {
+    text-decoration: none;
+}
+
 .footer_logos > * {
     margin-right: 20px;
 }
@@ -300,7 +304,8 @@ footer {
     position: relative;
     text-decoration: none;
     color: #9a4dff;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', serif;
+    font-size: 14px;
 }
 
 .user_btn::before {

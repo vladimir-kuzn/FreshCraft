@@ -90,7 +90,7 @@
     <div class="server_info__wrapper">
         <h1>СЕРВЕРА - УЖЕ СКОРО!</h1>
         <div class="info_container row_reverse">
-            <img src="{{asset('assets/images/1_tmp/Minecraft_600x360.jpeg')}}" alt="cover">
+            <img src="{{asset('assets\images\posters\poster (22).webp')}}" alt="cover">
             <div class="container_text">
                 <h2>
                     ПРИСОЕДЕНЯЙСЯ К ИГРОКАМ НА СЕРВЕР
@@ -104,7 +104,7 @@
         </div>
 
         <div class="info_container">
-            <img src="{{asset('assets/images/1_tmp/Minecraft_600x360.jpeg')}}" alt="cover">
+            <img src="{{asset('assets\images\posters\poster (9).webp')}}" alt="cover">
             <div class="container_text">
                 <h2>
                     МЫ ЗА АДЕКВАТНОЕ КОМЬЮНИТИ
@@ -120,7 +120,7 @@
         </div>
 
         <div class="info_container row_reverse">
-            <img src="{{asset('assets/images/1_tmp/Minecraft_600x360.jpeg')}}" alt="cover">
+            <img src="{{asset('assets\images\posters\poster (14).webp')}}" alt="cover">
             <div class="container_text">
                 <h2>
                     ИНТЕРЕСНОЕ СОЧЕТАНИЕ ЧАСТИЧНОГО РП И АНАРХИИ

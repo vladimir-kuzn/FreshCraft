@@ -64,8 +64,12 @@
             <div class="footer_wrapper">
                 <div class="info-legal">
                     <div class="footer_logos">
-                        <img src="{{asset('assets/images/logos/logo-pheonix.svg')}}" alt="logo pheonix">
-                        <h1 class="logo_grape">GRAPE <br> CREATE</h1>
+                        <a href="https://pheo-design.ru" target="_blank">
+                            <img src="{{asset('assets/images/logos/logo-pheonix.svg')}}" alt="logo pheonix">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCvbAKuWO0fOGxQ1mCBFAhzg" target="_blank">
+                            <h1 class="logo_grape">GRAPE <br> CREATE</h1>
+                        </a>
                     </div>
                     <p>© Mojang, 2009-2022. Товарный знак "Minecraft" принадлежит компании Mojang Synergies AB</p>
                     <hr style="width: 100%;">

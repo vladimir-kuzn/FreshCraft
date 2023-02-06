@@ -32,7 +32,7 @@ Route::name('post')->get('/post/{post}', Main\PostController::class);
 // https://github.com/JakyeRU/Laravel-Discord-Authentication <3
 Route::get('discord', [DiscordController::class, 'login'])->name('discord.login');
 
- Route::name('admin.')->prefix('admin')->middleware('Auth')->middleware('role:admin')->group(function () {
+ Route::name('admin.')->prefix('admin')->middleware('Auth')->middleware('role:super_admin')->group(function () {
      //admin
      Route::get('/', AdminController::class);
      Route::name('categories.')->prefix('categories')->group(function () {

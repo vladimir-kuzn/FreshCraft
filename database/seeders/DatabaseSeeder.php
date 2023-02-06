@@ -20,11 +20,15 @@ class DatabaseSeeder extends Seeder
             'id' => '1',
             'name' => 'user',
             'guard_name' => 'web',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
         DB::table('roles')->insert([
             'id' => '2',
-            'name' => 'admin',
+            'name' => 'super_admin',
             'guard_name' => 'web',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
     }
 }

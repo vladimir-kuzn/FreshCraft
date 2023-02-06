@@ -41,7 +41,7 @@
                     </span>
                         @if (Route::has('password.request'))
                             <a class="" href="{{ route('password.request') }}">
-                                {{ __('Забыл?') }}
+                                {{ __('Забыли?') }}
                             </a>
                         @endif
                         <input id="password" type="password"
@@ -53,7 +53,7 @@
                         </span>
                         @enderror
                     </div>
-                    <div style="margin-bottom: 10px">
+                    <div style="margin-bottom: 30px">
                         <label class="custom-checkbox" for="remember">
                             <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                             <span>Запомнить</span>
