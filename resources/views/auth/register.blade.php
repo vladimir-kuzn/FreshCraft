@@ -58,7 +58,7 @@
                     <div class="submit">
                         <a class="gui_button" href="{{ route('register') }}" onclick="event.preventDefault(); document.getElementById('form_auth').submit();">
                             <div class="horisontal"></div>
-                            <p>Зарегистрироваться!</p>
+                            <p>Создать!</p>
                             <div class="vertical"></div>
                         </a>
                         <a class="gui_button" href="{{ route('login') }}" style="margin-top: 20px;">
