@@ -47,7 +47,7 @@
                 <div class="more_containers">
                     <div class="content_container">
                         <img src="{{asset('assets/images/covers/Fantasy-GrayScale.webp')}}">
-                        <h2>FreshCraft Fantasy</h2>
+                        <h2>FreshCraft Fantasy - DLC</h2>
                         <p>
                             Классический FreshCraft в жанре Фэнтези.
                             Побеждайте мифологических и сказочных существ, могущественных боссов!
@@ -56,7 +56,7 @@
                     </div>
                     <div class="content_container">
                         <img src="{{asset('assets/images/covers/Classic.webp')}}">
-                        <h2>FreshCraft Classic</h2>
+                        <h2>FreshCraft</h2>
                         <p>
                             FreshCraft Classic - Это сборка модов майнкрафт,
                             целью которой является освежить и улучшить
@@ -66,7 +66,7 @@
                     </div>
                     <div class="content_container">
                         <img src="{{asset('assets/images/covers/Industrial-GrayScale.webp')}}">
-                        <h2>FreshCraft Industrial</h2>
+                        <h2>FreshCraft Industrial - DLC</h2>
                         <p>
                             Классический FreshCraft с упором на тех.
                             развитие с преобладанием промышленного производства,

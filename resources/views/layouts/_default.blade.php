@@ -13,6 +13,7 @@
                         <a href="#">ПРАВИЛА СЕРВЕРА</a>
                     </div>
                     <div class="header__getfresh">
+                        <img src="{{ asset('assets/images/1_tmp/Website_in_development.png') }}" alt="Сайт в разработке" style="margin-right: 20px">
                         @if(Auth::check())
                             <ul class="main_ul">
                                 <a class="user_btn" href="#">{{ Auth::user()->getAttribute('nickname') }}</a>
@@ -44,7 +45,7 @@
                         @endif
                         <a class="gui_button" href="{{ route('launcher') }}">
                             <div class="horisontal"></div>
-                            <p>ПОЛУЧИТЬ ЛАУНЧЕР</p>
+                            <p>ПОЛУЧИТЬ FRESHCRAFT</p>
                             <div class="vertical"></div>
                         </a>
                     </div>
@@ -80,34 +81,33 @@
                 </div>
                 <div class="sitemap">
                     <div>
-                        <h3>Пример категории</h3>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
+                        <h3>Сборки</h3>
+                        <a href="#">FreshCraft ⚠️</a>
+                        <a href="#">FreshCraft Industrial - DLC ⚠️</a>
+                        <a href="#">FreshCraft Fantasy - DLC ⚠️</a>
+                        <a href="{{ route('launcher') }}">Лаунчер</a>
                     </div>
                     <div>
-                        <h3>Пример категории</h3>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
+                        <h3>Донат</h3>
+                        <a href="https://boosty.to/grapecreate">Boosty</a>
+                        <a href="#">Сервер - Товары ⚠️</a>
                     </div>
                     <div>
-                        <h3>Пример категории</h3>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
+                        <h3>Сервер</h3>
+                        <a href="#">О сервере ⚠️</a>
+                        <a href="#">Правила ⚠️</a>
+                        <a href="#">Товары ⚠️</a>
                     </div>
                     <div>
-                        <h3>Пример категории</h3>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
+                        <h3>Учётная запись</h3>
+                        <a href="#">Профиль ⚠️</a>
                     </div>
                     <div>
-                        <h3>Пример категории</h3>
-                        <a href="#">Страница</a>
-                        <a href="#">Страница</a>
+                        <h3>О нас</h3>
+                        <a href="#">Основная информация ⚠️</a>
+                        <a href="{{ route('contacts') }}">Контакты/Поддержка</a>
+                        <a href="#">Политика конфидициальности ⚠️</a>
+                        <a href="#">Разработчики ⚠️</a>
                     </div>
                 </div>
             </div>

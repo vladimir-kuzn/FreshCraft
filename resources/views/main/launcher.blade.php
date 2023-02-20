@@ -2,18 +2,16 @@
 
 @section('content-main')
 <section class="sect__welcome">
-    <img class="bg_image" src="../img/posters/poster (5).webp" alt="background">
+    <img class="bg_image" src="{{ asset('assets/images/service_obl/bg_launcher_page.webp') }}" alt="background">
     <div class="filter_on_poster"></div>
-    <img class="cover" src="https://freshcraft.pheo-design.ru/img/launcher_cover.jpeg" alt="launcher cover">
+    <img class="cover" src="{{ asset('assets/images/covers/LauncherPoster.webp') }}" alt="launcher cover">
     <div class="welcome_container">
         <div class="weclome_wrapper">
             <h1>
                 FRESHCRAFT LAUNCHER
             </h1>
             <p>
-                Кстати, акционеры крупнейших компаний
-                формируют глобальную экономическую сеть и при
-                этом — функционально разнесены на независимые элементы! Testing Jenkins 2
+                Скачайте наш лаунчер для игры на сборке и сервере - удобной загрузки обновлений и выбора версий!
             </p>
         </div>
         <a class="gui_button" href="#">

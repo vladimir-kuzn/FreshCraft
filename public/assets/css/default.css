@@ -1,10 +1,10 @@
 * {
-    font-family: 'Noto Sans';
+    font-family: 'Noto Sans', serif;
     z-index: 0;
 }
 
 h1 {
-    font-family: "Noto Sans";
+    font-family: "Noto Sans", serif;
     font-weight: 700;
     font-size: 36px;
     line-height: 40px;
@@ -12,7 +12,7 @@ h1 {
 }
 
 p {
-    font-family: "Noto Sans";
+    font-family: "Noto Sans", serif;
     font-size: 18px;
 }
 
@@ -153,7 +153,6 @@ header .header__links > a, .button_login {
 }
 
 .header__getfresh {
-    width: 600px;
     display: flex;
     justify-content: right;
     margin-right: 20px;
@@ -268,6 +267,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin: 0 10px;
+    font-size: 14px;
 }
 
 .sitemap > div {
@@ -309,7 +309,7 @@ footer {
 }
 
 .user_btn::before {
-    content: url("https://freshcraft.pheo-design.ru/img/ui-icons/arrow-down.png");
+    content: url("../images/ui-icons/arrow-down.png");
     position: absolute;
     right: -30px;
     top: 3px;
@@ -338,7 +338,7 @@ ul {
 }
 
 ul:hover .user_btn::before {
-    content: url("https://freshcraft.pheo-design.ru/img/ui-icons/arrow-up.png");
+    content: url("../images/ui-icons/arrow-up.png");
 }
 
 ul:hover .second_ul {
