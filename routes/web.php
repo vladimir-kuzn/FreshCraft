@@ -27,6 +27,8 @@ use App\Http\Controllers\Auth\Services\DiscordController;
 Route::name('index')->get('/', Main\IndexController::class);
 Route::name('contacts')->get('/contacts', Main\ContactsController::class);
 Route::name('launcher')->get('/launcher', Main\LauncherController::class);
+
+// Posts
 Route::name('post')->get('/post/{post}', Main\PostController::class);
 
 // https://github.com/JakyeRU/Laravel-Discord-Authentication <3

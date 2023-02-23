@@ -125,7 +125,7 @@
                 $('.hystmodal__window').append('<a id="update_getinages" href="#" onClick="getImages(); return false;">Обновить</a>')
                 for (var i = 0; i < data.length; i++) {
                     data[i] = data[i].slice(22);
-                    data[i] = "{{ Request::getSchemeAndHttpHost() }}/storage/images/forPost/" + data[i];
+                    data[i] = "{{ Request::getSchemeAndHttpHost() }}/storage/images/ForPosts/" + data[i];
                 }
                 $('.imageInStorage').remove();
                 var index;

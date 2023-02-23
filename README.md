@@ -20,23 +20,30 @@ In this project, I will present the real knowledge that I will be able to gain w
 ### On Linux:
 1. First, let's clone the repository:
 
-` git clone https://github.com/vladimir-kuzn/FreshCraft.git `
+<pre>$ git clone https://github.com/vladimir-kuzn/FreshCraft.git</pre>
 
 2. Next, you need to go to the project folder:
 
-` cd FreshCraft `
-
+<pre>$ cd FreshCraft/</pre>
 3. Install the necessary components via composer:
 
-` composer install `
+<pre>$ composer install</pre>
 
 4. Install the necessary components via npm:
 
-` npm install `
+<pre>$ npm install</pre>
 
 5. After creating the ".env" file, don't forget to create the application key
 
-` php artisan key:generate `
+<pre>$ php artisan key:generate</pre>
+
+6. Next, you need to create a 'public' folder in 'storage' and create the symbolic link
+
+<pre>
+$ mkdir storage/app/public/images/ForPosts
+
+$ php artisan storage:link
+</pre>
 
 ---
 

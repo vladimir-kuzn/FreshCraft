@@ -9,7 +9,7 @@ class GetController extends Controller
 {
     public function __invoke()
     {
-        $files = Storage::allFiles('public/images/forPost');
+        $files = Storage::allFiles('public/images/ForPosts');
         return response($files, 200);
     }
 }

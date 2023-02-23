@@ -10,7 +10,7 @@ class DelController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $files = Storage::allFiles('public/images/forPost');
+        $files = Storage::allFiles('public/images/ForPosts');
         $i = $request->query('image');
         if (Storage::delete($files[$i])){
             return response("OK", 200);

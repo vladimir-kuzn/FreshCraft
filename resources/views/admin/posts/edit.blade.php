@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-12">
                         <form action="{{ route('admin.posts.update', $post->id) }}" method="POST"
                               enctype="multipart/form-data" target="_blank">
                             @csrf
@@ -45,6 +45,13 @@
                                         @error('title')
                                         <div class="text-danger">Неверное название поста</div>
                                         @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Обложка</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               name="image" id="image" placeholder="Изображение"
+                                               value="{{ $post->image }}" readonly>
                                     </div>
                                     <div class="form-group">
                                         <label>Категория</label>
@@ -66,9 +73,7 @@
                                         <label>Контент</label>
                                         <textarea
                                             class="@error('content') form-control is-invalid @enderror form-control"
-                                            rows="6" name="content" id="content" placeholder="Контент в MarkDown">
-                                            {{ $post->content }}
-                                        </textarea>
+                                            rows="50" name="content" id="content" placeholder="Контент в MarkDown">{{ $post->content }}</textarea>
                                         @error('content')
                                         <div class="text-danger">А где?</div>
                                         @enderror

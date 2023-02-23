@@ -23,7 +23,7 @@
                                         <p>Профиль</p>
                                         <div class="vertical"></div>
                                     </a>
-                                    @role('admin')
+                                    @role('super_admin')
                                         <a class="gui_button" href="{{ route('admin.') }}">
                                             <div class="horisontal"></div>
                                             <p>ADMIN</p>

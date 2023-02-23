@@ -76,7 +76,7 @@
                             <div class="card-body">
                                 @if($post->image != Null)
 
-                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("![image](/storage/images/forPost/".$post->image.")") !!}
+                                    {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("![image](/storage/images/ForPosts/".$post->image.")") !!}
                                     {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}
                                 @endif
                                 {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("## ".$post->title) !!}
