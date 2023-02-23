@@ -15,9 +15,12 @@ In this project, I will present the real knowledge that I will be able to gain w
 - composer
 - nodeJS
 
+---
+
 ## Installation
 
 ### On Linux:
+
 1. First, let's clone the repository:
 
 <pre>$ git clone https://github.com/vladimir-kuzn/FreshCraft.git</pre>
@@ -40,10 +43,23 @@ In this project, I will present the real knowledge that I will be able to gain w
 6. Next, you need to create a 'public' folder in 'storage' and create the symbolic link
 
 <pre>
+$ mkdir storage/app/public/images
 $ mkdir storage/app/public/images/ForPosts
 
 $ php artisan storage:link
 </pre>
+
+### How to launch seeds to get started:
+
+1. From the very beginning, you need to create roles:
+
+<pre> $ php artizan db:seed --class=RolesSeeder </pre>
+
+2. Next, you need to appoint an administrator for the site to use the admin panel. 
+To do this, the administrator needs to register on the site and assign to the ".env" file in the "EMAIL_ADMIN" parameter is mail, with which he registered earlier.
+And then start seed:
+
+<pre> php artisan db:seed --class=AdminSeeder </pre>
 
 ---
 
