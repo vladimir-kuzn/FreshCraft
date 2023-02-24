@@ -121,19 +121,17 @@
     </body>
 
     <script>
-        setInterval(function() {
-            let url = "/health";
-            $.ajax(url,{crossOrigin: true,})
-                .done(function (){
-                    $(".server_status").css( "background-color", "#93c47d" );
-                    $(".server_status").css( "color", "#38761d" );
-                    $(".server_status").html("Running");
-                })
-                .fail(function (){
-                    $(".server_status").css( "background-color", "#e06666" );
-                    $(".server_status").css( "color", "#990000" );
-                    $(".server_status").html("Not running");
-                })
-        }, 5000);
+        let url = "/health";
+        $.ajax(url,{crossOrigin: true,})
+            .done(function (){
+                $(".server_status").css( "background-color", "#93c47d" );
+                $(".server_status").css( "color", "#38761d" );
+                $(".server_status").html("Running");
+            })
+            .fail(function (){
+                $(".server_status").css( "background-color", "#e06666" );
+                $(".server_status").css( "color", "#990000" );
+                $(".server_status").html("Not running");
+            })
     </script>
 </html>
