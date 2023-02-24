@@ -3,20 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Utility\Rcon;
 
 class CheckServerController extends Controller
 {
     public function __invoke()
     {
-        $ch = curl_init('http://freshcraft.freshcrafting.com/health');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-        $html = curl_exec($ch);
-        curl_close($ch);
-        $html = json_decode($html, true);
+        if($this->is_rcon_connection_successful()) {
+            return response()->json(['status' => "running"], 201);
+        } else {
+            return response()->json(['status' => "down"], 500);
+        }
+    }
 
-        //return dd($html);
-        return response()->json($html);
+    private function is_rcon_connection_successful()
+    {
+        try {
+            $rcon = new Rcon("freshcraft.freshcrafting.com", env("RCON_PORT"), env("RCON_PASSWORD"), 2);
+            return $rcon->connect();
+        } catch(\Exception $e){
+            return false;
+        }
     }
 }
