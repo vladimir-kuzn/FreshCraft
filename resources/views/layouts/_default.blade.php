@@ -123,7 +123,7 @@
     <script>
         setInterval(function() {
 
-            let url = "http://freshcraft.freshcrafting.com/health";
+            let url = "/health";
             $.ajax(url,
                 {
                     dataType: 'json',

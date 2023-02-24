@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckServerController;
 use App\Http\Controllers\Main as Main;
 use App\Http\Controllers\Admin\Main\AdminController;
 use App\Http\Controllers\Admin\Category as Category;
@@ -27,6 +28,7 @@ use App\Http\Controllers\Auth\Services\DiscordController;
 Route::name('index')->get('/', Main\IndexController::class);
 Route::name('contacts')->get('/contacts', Main\ContactsController::class);
 Route::name('launcher')->get('/launcher', Main\LauncherController::class);
+Route::name('server_status')->get('/health', CheckServerController::class);
 
 // Posts
 Route::name('post')->get('/post/{post}', Main\PostController::class);
