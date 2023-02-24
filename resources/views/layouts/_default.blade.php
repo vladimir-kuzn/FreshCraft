@@ -78,6 +78,12 @@
                         Мы никоим образом не связаны с Mojang, AB.</p>
                     <p>All information posted on the site is not a public offer.
                         We are in no way affiliated with Mojang, AB.</p>
+                    <h3 class="server_status_color" style="color: white">
+                        Server status:
+                        <b class="server_status" style="background-color: #6fa8dc; color: #0b5394; padding: 5px; border-radius: 10px" >
+                            Checking...
+                        </b>
+                    </h3>
                 </div>
                 <div class="sitemap">
                     <div>
@@ -115,13 +121,25 @@
     </body>
 
     <script>
-        $(function () {
-            $(document).click((e) => {
-                const {target} = e;
-                if(target.nodeName === 'A' && target.getAttribute('href') === '#') {
-                    e.preventDefault();
-                };
-            });
-        });
+        setInterval(function() {
+
+            let url = "http://freshcraft.freshcrafting.com/health";
+            $.ajax(url,
+                {
+                    dataType: 'json',
+                    crossOrigin: true,
+                    success: function(data){
+                        if(data[1]['State'] != "running"){
+                            $(".server_status").css( "background-color", "#e06666" );
+                            $(".server_status").css( "color", "#990000" );
+                            $(".server_status").html("Not running");
+                        } else {
+                            $(".server_status").css( "background-color", "#93c47d" );
+                            $(".server_status").css( "color", "#38761d" );
+                            $(".server_status").html("Running");
+                        }
+                    }
+                })
+        }, 5000);
     </script>
 </html>
