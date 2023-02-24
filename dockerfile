@@ -40,6 +40,7 @@ USER root
 
 RUN touch /var/log/php8.1-fpm.log && chown www:www /var/log/php8.1-fpm.log
 RUN chown www:www /run/php
+RUN php artisan config:clear
 
 USER www
 
