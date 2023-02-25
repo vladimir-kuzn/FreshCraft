@@ -10,7 +10,8 @@
                     <div class="header__links">
                         <a href="#">НОВОСТИ</a>
                         <a href="{{ route('contacts') }}">КОНТАКТЫ</a>
-                        <a href="#">ПРАВИЛА СЕРВЕРА</a>
+                        <a href="#">СЕРВЕРА</a>
+                        <a href="#">СБОРКИ</a>
                     </div>
                     <div class="header__getfresh">
                         <img src="{{ asset('assets/images/1_tmp/Website_in_development.png') }}" alt="Сайт в разработке" style="margin-right: 20px">

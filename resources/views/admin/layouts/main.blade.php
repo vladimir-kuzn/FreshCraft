@@ -92,8 +92,7 @@
         <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
+</div><!-- ./wrapper -->
 
 <!-- jQuery -->
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
@@ -116,19 +115,19 @@
 </script>
 <script>
     function getImages() {
-        $('#update_getinages').remove();
+        $('.gui_btn').remove();
         $.ajax({
             url: 'images',
             dataType: 'json',
             method: 'get',
             success: function (data) {
-                $('.hystmodal__window').append('<a id="update_getinages" href="#" onClick="getImages(); return false;">Обновить</a>')
-                for (var i = 0; i < data.length; i++) {
+                $('.hystmodal__window').append('<a class="gui_btn" href="#" onClick="getImages(); return false;">Обновить</a>')
+                    for (let i = 0; i < data.length; i++) {
                     data[i] = data[i].slice(22);
-                    data[i] = "{{ Request::getSchemeAndHttpHost() }}/storage/images/ForPosts/" + data[i];
+                    data[i] = "{{ Request::getSchemeAndHttpHost() }}/storage/images/ForPosts" + data[i];
                 }
                 $('.imageInStorage').remove();
-                var index;
+                let index;
                 for (index = 0; index < data.length; ++index) {
                     $('.list_images').append($(
                         '<tr class="element_' + index + ' imageInStorage">' +

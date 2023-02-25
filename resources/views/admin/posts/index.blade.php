@@ -6,10 +6,14 @@
         <div class="hystmodal__wrap">
             <div class="hystmodal__window" role="dialog" aria-modal="true">
                 <button data-hystclose class="hystmodal__close">Close</button>
-                <a id="update_getinages" href="#" onClick="getImages(); return false;">Обновить</a>
                 <table class="list_images">
 
                 </table>
+                <form action="{{ route('admin.images.upload') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input name="image[]" type="file" multiple>
+                    <button type="submit">Загрузить</button>
+                </form>
             </div>
         </div>
     </div>

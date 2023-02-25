@@ -63,6 +63,7 @@ Route::get('discord', [DiscordController::class, 'login'])->name('discord.login'
      });
      Route::name('images.')->prefix('images')->group(function () {
          Route::get('/', Images\GetController::class)->name('get');
+         Route::post('/upload', [Images\SetController::class, 'upload'])->name('upload');
          Route::get('/del', Images\DelController::class)->name('del');
      });
 //     Route::name('packs.')->prefix('packs')->group(function () {
