@@ -9,12 +9,26 @@ class SetController extends Controller
 {
     public function upload(Request $request)
     {
-        $paths = [];
-
         foreach ($request->file('image') as $file){
-            $paths[] = $file->store('public/images/ForPosts');
+            if($file->getMimeType() == "image/jpeg") {
+                $file->store('public/images/ForPosts');
+                return "Успешно!";
+            }
+            elseif ($file->getMimeType() == "image/png") {
+                $file->store('public/images/ForPosts');
+                return "Успешно!";
+            }
+            elseif ($file->getMimeType() == "image/gif"){
+                $file->store('public/images/ForPosts');
+                return "Успешно!";
+            }
+            elseif ($file->getMimeType() == "image/svg+xml"){
+                $file->store('public/images/ForPosts');
+                return "Успешно!";
+            }
+            else{
+                return "FAIL !!!";
+            }
         }
-
-        dd($paths);
     }
 }

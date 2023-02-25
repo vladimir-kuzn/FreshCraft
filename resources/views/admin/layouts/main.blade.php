@@ -32,13 +32,39 @@
         }
         .imageInStorage > td {
             height: 100px;
+            border: black 2px solid;
+            padding: 5px;
         }
         .imageInStorage > td > img {
             max-height: 100%;
         }
+        .hystmodal__window {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
+<div class="hystmodal" id="myModal" aria-hidden="true">
+    <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <button data-hystclose class="hystmodal__close">Close</button>
+            <table class="list_images">
+
+            </table>
+            <form target="transFrame" action="{{ route('admin.images.upload') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input name="image[]" type="file" multiple>
+                <button id="image_submit" type="submit">Загрузить</button>
+            </form>
+            <iframe style="width: 100%; height: 34px" name="transFrame" id="transFrame"></iframe>
+        </div>
+    </div>
+</div>
+
 <div class="wrapper">
 
     <!-- Preloader -->
@@ -117,7 +143,7 @@
     function getImages() {
         $('.gui_btn').remove();
         $.ajax({
-            url: 'images',
+            url: '{{route('admin.images.get')}}',
             dataType: 'json',
             method: 'get',
             success: function (data) {
@@ -153,9 +179,10 @@
 
     new ClipboardJS('.link_');
 
+    // Для удаления файлов
     function del_image(image) {
         $.ajax({
-            url: 'images/del',
+            url: '{{route('admin.images.del')}}',
             dataType: 'html',
             method: 'get',
             data: {image: image},
@@ -164,6 +191,13 @@
             }
         })
     }
+
+    // Для обновления списка файлов после загрузки
+    $(document).ready(function() {
+        $('#transFrame').change(function() {
+            getImages();
+        });
+    });
 </script>
 <script>
     $(document).ready(function(){

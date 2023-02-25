@@ -88,7 +88,7 @@
                                             <input type="text"
                                                    class="form-control"
                                                    name="image" id="image" placeholder="Изображение"
-                                                   value="{{ old('image') }}" readonly>
+                                                   value="{{ old('image') }}">
                                         </div>
                                         <div class="form-group">
                                             <label>Категория</label>

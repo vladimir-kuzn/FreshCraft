@@ -51,7 +51,7 @@
                                         <input type="text"
                                                class="form-control"
                                                name="image" id="image" placeholder="Изображение"
-                                               value="{{ $post->image }}" readonly>
+                                               value="{{ $post->image }}">
                                     </div>
                                     <div class="form-group">
                                         <label>Категория</label>

@@ -1,51 +1,28 @@
 @extends('admin.layouts.main')
 
 @section('content')
-
-    <div class="hystmodal" id="myModal" aria-hidden="true">
-        <div class="hystmodal__wrap">
-            <div class="hystmodal__window" role="dialog" aria-modal="true">
-                <button data-hystclose class="hystmodal__close">Close</button>
-                <table class="list_images">
-
-                </table>
-                <form action="{{ route('admin.images.upload') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <input name="image[]" type="file" multiple>
-                    <button type="submit">Загрузить</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Посты</h1>
-                    </div><!-- /.col -->
+                    </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active">Dashboard v1</li>
                         </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /.content-header -->
 
-        <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
                 <div class="">
                     <div class="col-4 mb-3 row">
-                        <a href="{{ route('admin.posts.create') }}" class="col-4 btn btn-block btn-primary mr-1">Создать
-                            новый</a>
-                        <a href="#" class="col-4 btn btn-block btn-primary" data-hystmodal="#myModal" onClick="getImages(); return false;">Изображения</a>
+                        <a href="{{ route('admin.posts.create') }}" class="col-4 btn btn-block btn-primary mr-1">Создать новый</a>
                     </div>
                     <div class="row flex-wrap ">
                         @foreach($posts as $post)
@@ -79,7 +56,6 @@
 
                             <div class="card-body">
                                 @if($post->image != Null)
-
                                     {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("![image](/storage/images/ForPosts/".$post->image.")") !!}
                                     {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("---") !!}
                                 @endif
@@ -89,15 +65,11 @@
                                     {!! app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml("#### ".$categories->find($post->category_id)->getAttribute('title')) !!}
                                 @endif
                             </div>
-
                         </div>
                         @endforeach
                     </div>
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
+            </div>
         </section>
-        <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
 @endsection

@@ -7,6 +7,14 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="#" class="nav-link" style="" data-hystmodal="#myModal" onClick="getImages(); return false;">
+        <i class="fa-regular fa-file"></i>
+        <p style="">
+            Файлы
+        </p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{route('admin.categories.')}}" class="nav-link" style="">
         <i class="fa-solid fa-bars"></i>
         <p style="">
