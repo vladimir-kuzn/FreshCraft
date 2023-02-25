@@ -14,7 +14,6 @@ services:
     volumes:
       - shared-data:/var/www
       - laravel-storage:/var/www/storage
-      - ./fpm/:/etc/php/8.1/fpm
     networks:
       - freshcraft
 
