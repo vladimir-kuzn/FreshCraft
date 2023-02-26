@@ -12,8 +12,12 @@ services:
       SERVICE_NAME: php-fpm
       SERVICE_TAGS: dev
     volumes:
-      - shared-data:/var/www
-      - laravel-storage:/var/www/storage
+      - type: volume
+        source: shared-data
+        target: /var/www
+      - type: volume
+        source: laravel-storage
+        target: /var/www/storage
       - type: bind
         source: ./fpm/php.ini
         target: /etc/php/8.1/fpm/php.ini
