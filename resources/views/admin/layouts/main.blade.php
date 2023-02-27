@@ -201,11 +201,23 @@
 </script>
 <script>
     $(document).ready(function(){
+        $("input[name='create']").click(function(){
+            var form =  $(this).closest('form');
+            form.attr('target', '');
+        });
+        return false;
+    });
+    $(document).ready(function(){
+        $("input[name='edit']").click(function(){
+            var form =  $(this).closest('form');
+            form.attr('target', '');
+        });
+        return false;
+    });
+    $(document).ready(function(){
         $("input[name='preview']").click(function(){
             var form =  $(this).closest('form');
             form.attr('target', '_blank');
-            form.submit();
-            form.attr('target', '');
         });
         return false;
     });

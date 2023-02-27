@@ -32,9 +32,7 @@
                                 <h3 class="card-title">Новый пост</h3>
                             </div>
                             <form action="{{ route('admin.posts.store') }}" method="POST" target="">
-                                
                                 @csrf
-
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Название</label>
