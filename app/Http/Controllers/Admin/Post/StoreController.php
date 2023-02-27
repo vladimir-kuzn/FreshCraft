@@ -21,7 +21,7 @@ class StoreController extends BaseController
         {
             $post = $request;
             $categories = Category::all();
-            return view('main.post', compact('post', 'categories'));
+            return view('client.posts.post', compact('post', 'categories'));
         }
     }
 }
