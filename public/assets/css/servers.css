@@ -1,0 +1,136 @@
+.sect__welcome {
+    height: 600px;
+    overflow: hidden;
+    background-color: #111111;
+    color: white;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 83px;
+}
+
+.sect__welcome h1 {
+    text-transform: uppercase;
+}
+
+.sect__welcome .cover {
+    z-index: 1;
+    margin-right: 32px;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.sect__welcome .bg_image {
+    z-index: -1;
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.filter_on_poster {
+    background-color: #000;
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+}
+
+.welcome_container {
+    width: 900px;
+    display: flex;
+}
+
+.weclome_wrapper {
+    text-shadow: 1px 1px black;
+    display: flex;
+    flex-direction: column;
+    background-color: #111111;
+    padding: 50px;
+    width: 400px;
+}
+.weclome_wrapper > h1 {
+    font-size: 36px;
+    margin: 0;
+    line-height: 50px;
+}
+.weclome_wrapper > p {
+    width: 100%;
+}
+
+.description {
+    width: 100%;
+    padding: 25px 0;
+    background-color: black;
+}
+.description > div {
+    background-color: #111111;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.description > div > h2 {
+    width: 1000px;
+}
+
+.info {
+    padding: 25px 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info > h3 {
+    text-align: center;
+}
+.info > div {
+    display: flex;
+    flex-direction: row;
+    width: 1140px;
+    justify-content: space-between;
+}
+.info > div > div {
+    width: 530px;
+}
+.info > div > div > h2 {
+    color: white;
+    padding: 37px 55px;
+    margin: 0 auto;
+}
+.info > div > div > p {
+
+    padding: 35px 65px 55px 55px;
+    margin: 0 auto;
+}
+.info > div > div > div {
+    padding: 0 65px 55px 55px;
+    display: flex;
+    background-color: #f3e4f4;
+    justify-content: space-between;
+    align-items: center;
+}
+.info > div > div > div > img {
+    width: 95px;
+    height: 95px;
+}
+.container_left {
+    background-color: #f3e4f4;
+}
+.container_left > h2 {
+    background-color: #915f9c;
+}
+.container_right {
+    background-color: #f3e4f4;
+}
+.container_right > h2 {
+    background-color: #915f9c;
+}

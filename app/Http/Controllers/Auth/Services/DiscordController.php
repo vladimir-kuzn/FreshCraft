@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth\Services;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 
 class DiscordController extends Controller

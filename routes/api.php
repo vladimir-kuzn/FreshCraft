@@ -3,8 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Auth\Services\DiscordController;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,7 +14,7 @@ use App\Http\Controllers\Auth\Services\DiscordController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth_layouts:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 

@@ -1,4 +1,4 @@
-@extends('layouts.auth.register')
+@extends('auth_layouts.register')
 
 @section('content-main')
     <div class="main" style="margin-top: 83px;">
@@ -56,7 +56,8 @@
                                required autocomplete="new-password">
                     </div>
                     <div class="submit">
-                        <a class="gui_button" href="{{ route('register') }}" onclick="event.preventDefault(); document.getElementById('form_auth').submit();">
+                        <a class="gui_button" href="{{ route('register') }}"
+                           onclick="event.preventDefault(); document.getElementById('form_auth').submit();">
                             <div class="horisontal"></div>
                             <p>Создать!</p>
                             <div class="vertical"></div>

@@ -1,4 +1,4 @@
-@extends('layouts.auth.login')
+@extends('auth_layouts.login')
 
 @section('content-main')
     <div class="main" style="margin-top: 83px;">
@@ -14,12 +14,13 @@
                     <div class="submit_row">
                         <a class="gui_button" href="#" style="margin-right: 20px;">
                             <div class="horisontal"></div>
-                            <p> <img src="{{asset('assets/images/socials/discord-svg.svg')}}" alt="DISCORD">Discord</p>
+                            <p><img src="{{asset('assets/images/socials/discord-svg.svg')}}" alt="DISCORD">Discord</p>
                             <div class="vertical"></div>
                         </a>
                         <a class="gui_button" href="#">
                             <div class="horisontal"></div>
-                            <p> <img src="{{asset('assets/images/socials/microsoft-svg.svg')}}" alt="DISCORD">Microsoft</p>
+                            <p><img src="{{asset('assets/images/socials/microsoft-svg.svg')}}" alt="DISCORD">Microsoft
+                            </p>
                             <div class="vertical"></div>
                         </a>
                     </div>
@@ -60,7 +61,8 @@
                         </label>
                     </div>
                     <div class="submit">
-                        <a class="gui_button" href="{{ route('login') }}" onclick="event.preventDefault(); document.getElementById('form_auth').submit();">
+                        <a class="gui_button" href="{{ route('login') }}"
+                           onclick="event.preventDefault(); document.getElementById('form_auth').submit();">
                             <div class="horisontal"></div>
                             <p>Войти</p>
                             <div class="vertical"></div>
