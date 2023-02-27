@@ -32,7 +32,7 @@
                                     ID:{{ $post->id }} |
                                 </h3>
                                 <h3 class="card-title col-6 row">
-                                    <a href="{{ route('post', $post->id) }}" target="_blank">
+                                    <a href="{{ route('posts.post', $post->id) }}" target="_blank">
                                         <i class="far fa-eye"></i>
                                     </a>
                                     <a class="text-success ml-3"
