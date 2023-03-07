@@ -8,10 +8,10 @@
             <div class="header__container">
                 <div class="header__wrapper">
                     <div class="header__links">
-                        <a href="#">НОВОСТИ</a>
+                        <a href="{{ route('posts.') }}">НОВОСТИ</a>
                         <a href="{{ route('contacts') }}">КОНТАКТЫ</a>
                         <a href="{{ route('severs.') }}">СЕРВЕРА</a>
-                        <a href="#">СБОРКИ</a>
+                        <a href="{{ route('packs.') }}">СБОРКИ</a>
                     </div>
                     <div class="header__getfresh">
                         <img src="{{ asset('assets/images/1_tmp/Website_in_development.png') }}" alt="Сайт в разработке" style="margin-right: 20px">
@@ -88,29 +88,39 @@
                 </div>
                 <div class="sitemap">
                     <div>
-                        <h3>Сборки</h3>
-                        <a href="#">FreshCraft ⚠️</a>
-                        <a href="#">FreshCraft Industrial - DLC ⚠️</a>
-                        <a href="#">FreshCraft Fantasy - DLC ⚠️</a>
+                        <h3>
+                            <a href="{{ route('packs.') }}">Сборки</a>
+                        </h3>
+                        <a href="{{ route('packs.pack', 'freshcraft') }}">FreshCraft ⚠️</a>
+                        <a href="{{ route('packs.pack', 'industrial') }}">FreshCraft Industrial - DLC ⚠️</a>
+                        <a href="{{ route('packs.pack', 'fantasy') }}">FreshCraft Fantasy - DLC ⚠️</a>
                         <a href="{{ route('launcher') }}">Лаунчер</a>
                     </div>
                     <div>
-                        <h3>Донат</h3>
+                        <h3>
+                            <a href="#">Донат</a>
+                        </h3>
                         <a href="https://boosty.to/grapecreate">Boosty</a>
-                        <a href="#">Сервер - Товары ⚠️</a>
+                        <a href="{{ route('shop.') }}">Сервер - Товары ⚠️</a>
                     </div>
                     <div>
-                        <h3>Сервер</h3>
-                        <a href="#">О сервере ⚠️</a>
-                        <a href="#">Правила ⚠️</a>
-                        <a href="#">Товары ⚠️</a>
+                        <h3>
+                            <a href="{{ route('severs.') }}">Сервера</a>
+                        </h3>
+                        <a href="{{ route('severs.server', 'freshcraft') }}">FreshCraft ⚠️</a>
+                        <a href="{{ route('severs.server', 'industrial') }}">Industrial ⚠️</a>
+                        <a href="{{ route('severs.server', 'fantasy') }}">Fantasy ⚠️</a>
                     </div>
                     <div>
-                        <h3>Учётная запись</h3>
+                        <h3>
+                            <a href="#">Учётная запись</a>
+                        </h3>
                         <a href="#">Профиль ⚠️</a>
                     </div>
                     <div>
-                        <h3>О нас</h3>
+                        <h3>
+                            <a href="#">О нас</a>
+                        </h3>
                         <a href="#">Основная информация ⚠️</a>
                         <a href="{{ route('contacts') }}">Контакты/Поддержка</a>
                         <a href="#">Политика конфидициальности ⚠️</a>
