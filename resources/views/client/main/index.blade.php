@@ -42,38 +42,42 @@
                 <img src="{{asset('assets/images/ui-icons/corner.png')}}">
             </div>
             <div class="more-games_wrapper">
-                <h1>ВСЕ ПРОЕКТЫ FRESHCRAFT</h1>
                 <div class="container_wrapper">
                     <div class="more_containers">
-                        <div class="content_container">
-                            <img src="{{asset('assets/images/covers/Fantasy-GrayScale.webp')}}">
-                            <h2>FreshCraft Fantasy - DLC</h2>
-                            <p>
-                                Классический FreshCraft в жанре Фэнтези.
-                                Побеждайте мифологических и сказочных существ, могущественных боссов!
-                                Изучайте магию и покоряйте новые таинственные измерения!
-                            </p>
+                        <div class="content_container" style="margin-bottom: 20px">
+                            <
+                            <img src="{{asset('assets/images/covers/Classic.webp')}}" style="margin-right: 20px">
+                            <div>
+                                <h2 style="font-size: 36px;">FreshCraft</h2>
+                                <p style="font-size: 26px;">
+                                    FreshCraft Classic - Это сборка модов майнкрафт,
+                                    целью которой является освежить и улучшить
+                                    впечатления от ванильного выживания.
+                                    Основной упор сделан на приключения
+                                </p>
+                            </div>
                         </div>
                         <div class="content_container">
-                            <img src="{{asset('assets/images/covers/Classic.webp')}}">
-                            <h2>FreshCraft</h2>
-                            <p>
-                                FreshCraft Classic - Это сборка модов майнкрафт,
-                                целью которой является освежить и улучшить
-                                впечатления от ванильного выживания.
-                                Основной упор сделан на приключения
-                            </p>
-                        </div>
-                        <div class="content_container">
-                            <img src="{{asset('assets/images/covers/Industrial-GrayScale.webp')}}">
-                            <h2>FreshCraft Industrial - DLC</h2>
-                            <p>
-                                Классический FreshCraft с упором на тех.
-                                развитие с преобладанием промышленного производства,
-                                энергетики и металлургии.
-                                Стройте заводы, механизмы, сложные
-                                конструкции и изучайте технологии!
-                            </p>
+                            <div style="display: flex; flex-direction: row; margin-right: 20px; align-items: center">
+                                <img src="{{asset('assets/images/covers/Fantasy-GrayScale.webp')}}" style="max-height: 200px">
+                                <div style="width: 300px;">
+                                    <h2 style="font-size: 16px">FreshCraft Fantasy - DLC</h2>
+                                    <p>
+                                        Мифологические и сказочные существа, могущественных боссы!
+                                        Изучайте магию и покоряйте новые таинственные измерения!
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: row; align-items: center">
+                                <img src="{{asset('assets/images/covers/Industrial-GrayScale.webp')}}" style="max-height: 200px">
+                                <div style="width: 300px;">
+                                    <h2 style="font-size: 16px">FreshCraft Industrial - DLC</h2>
+                                    <p>
+                                        Преобладание промышленного производства, энергетики и металлургии.
+                                        Заводы, механизмы, сложные конструкции и технологии!!
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

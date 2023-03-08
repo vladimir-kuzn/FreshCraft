@@ -11,6 +11,7 @@ use App\Http\Controllers\Client\InDevelopmentController;
 use App\Http\Controllers\Client\Launcher as Launcher;
 use App\Http\Controllers\Client\Main as Main;
 use App\Http\Controllers\Client\Posts as Posts;
+use App\Http\Controllers\Client\Packs as Packs;
 //TODO ServerController.php
 // use App\Http\Controllers\Client\Servers as Servers;
 use Illuminate\Support\Facades\Auth;
@@ -42,7 +43,7 @@ Route::name('severs.')->prefix('servers')->group(function (){
 
 // ModPacks
 Route::name('packs.')->prefix('packs')->group(function (){
-    Route::get('/', InDevelopmentController::class);
+    Route::get('/', Packs\IndexController::class);
     Route::get('/{pack_title}', InDevelopmentController::class)->name('pack');
 });
 

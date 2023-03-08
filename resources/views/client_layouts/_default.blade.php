@@ -18,6 +18,7 @@
                         @if(Auth::check())
                             <ul class="main_ul">
                                 <a class="user_btn" href="#">{{ Auth::user()->getAttribute('nickname') }}</a>
+                                <img class="arrow" src="{{ asset('assets/images/ui-icons/arrow.webp') }}" alt="">
                                 <ul class="second_ul">
                                     <a class="gui_button" href="#">
                                         <div class="horisontal"></div>
@@ -98,7 +99,7 @@
                     </div>
                     <div>
                         <h3>
-                            <a href="#">Донат</a>
+                            <a href="#">Донат ⚠️-</a>
                         </h3>
                         <a href="https://boosty.to/grapecreate">Boosty</a>
                         <a href="{{ route('shop.') }}">Сервер - Товары ⚠️</a>
@@ -113,18 +114,18 @@
                     </div>
                     <div>
                         <h3>
-                            <a href="#">Учётная запись</a>
+                            <a href="#">Учётная запись ⚠️-</a>
                         </h3>
-                        <a href="#">Профиль ⚠️</a>
+                        <a href="#">Профиль ⚠️-</a>
                     </div>
                     <div>
                         <h3>
-                            <a href="#">О нас</a>
+                            <a href="#">О нас ⚠️-</a>
                         </h3>
-                        <a href="#">Основная информация ⚠️</a>
+                        <a href="#">Основная информация ⚠️-</a>
                         <a href="{{ route('contacts') }}">Контакты/Поддержка</a>
-                        <a href="#">Политика конфидициальности ⚠️</a>
-                        <a href="#">Разработчики ⚠️</a>
+                        <a href="#">Политика конфидициальности ⚠️-</a>
+                        <a href="#">Разработчики ⚠️-</a>
                     </div>
                 </div>
             </div>

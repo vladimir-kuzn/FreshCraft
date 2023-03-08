@@ -1,0 +1,111 @@
+.banner {
+    overflow: hidden;
+    background-color: #111111;
+    color: white;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 83px;
+}
+.banner > img {
+    z-index: -1;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.static_screenshots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.static_screenshots > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.static_screenshots > div > a {
+    margin: 0 20px;
+}
+.static_screenshots > div > a > p {
+    font-size: 26px;
+    height: 26px;
+}
+.static_screenshots > div > a > img {
+
+}
+.static_screenshots > div > a[href="#screenshot"] {
+    max-height: 108px;
+    max-width: 192px;
+}
+.static_screenshots > div > a[href="#screenshot"] > img {
+    transition: all 0.3s;
+    box-sizing: content-box;
+    height: 100%;
+    width: 100%;
+}
+.static_screenshots > div > a[href="#screenshot"] > img:hover {
+    border: 2px solid #9a4dff;
+    transform: scale(1.07);
+}
+
+
+.news {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.news > h3 {
+    text-align: center;
+}
+.news > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.news > div > a.gui_button {
+    margin: 0 20px;
+}
+.news > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+    width: 870px;
+    height: 390px;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+}
+.news > div > div > img {
+    margin-right: 30px;
+    height: 324px;
+}
+.news > div > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.news > div > div > div > p {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+}
+.news > div > div > div > h1 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    margin: 0;
+}
+.news > div > div > div > a.gui_button {
+    margin-bottom: 12px;
+}

@@ -297,7 +297,7 @@ footer {
 }
 
 .user_btn {
-    margin-right: 50px;
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -308,18 +308,12 @@ footer {
     font-size: 14px;
 }
 
-.user_btn::before {
-    content: url("../images/ui-icons/arrow-down.png");
-    position: absolute;
-    right: -30px;
-    top: 3px;
-}
-
 ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0;
-    align-items: end;
+    align-items: center;
+    justify-content: center;
 }
 
 .second_ul {
@@ -337,14 +331,19 @@ ul {
     margin: 15px 8px;
 }
 
-ul:hover .user_btn::before {
-    content: url("../images/ui-icons/arrow-up.png");
+.arrow {
+    width: 14px;
+    margin-right: 20px;
+}
+
+ul:hover .arrow {
+    transform: rotate(180deg);
 }
 
 ul:hover .second_ul {
     display: flex;
     align-items: center;
-    transform: translateX(-45px);
+    transform: translateY(67px);
 }
 
 .user_btn:hover {
