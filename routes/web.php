@@ -14,6 +14,7 @@ use App\Http\Controllers\Client\Posts as Posts;
 use App\Http\Controllers\Client\Packs as Packs;
 //TODO ServerController.php
 // use App\Http\Controllers\Client\Servers as Servers;
+use App\Http\Controllers\Client\Shop as Shop;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,8 @@ use Illuminate\Support\Facades\Route;
 Route::name('index')->get('/', Main\IndexController::class);
 Route::name('contacts')->get('/contacts', Contacts\IndexController::class);
 Route::name('launcher')->get('/launcher', Launcher\IndexController::class);
+Route::name('legal')->get('/legal', InDevelopmentController::class);
+Route::name('about')->get('/about', InDevelopmentController::class);
 
 // Servers
 Route::name('severs.')->prefix('servers')->group(function (){
@@ -49,7 +52,7 @@ Route::name('packs.')->prefix('packs')->group(function (){
 
 // Shop
 Route::name('shop.')->prefix('shop')->group(function (){
-    Route::get('/', InDevelopmentController::class);
+    Route::get('/', Shop\ShopController::class);
     Route::get('/{product_id}', InDevelopmentController::class)->name('product');
 });
 

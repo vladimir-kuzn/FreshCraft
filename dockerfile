@@ -35,6 +35,8 @@ RUN composer update && composer install && composer dump-autoload && composer in
 RUN npm install
 RUN composer install --no-scripts
 
+RUN npm run build
+
 # Prepare FPM for non-root launching
 USER root
 
