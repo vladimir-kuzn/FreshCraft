@@ -6,7 +6,7 @@ RUN apt-get update
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install nodejs and npm
-RUN apt-get install -y curl && curl -s https://deb.nodesource.com/setup_19.x | bash && \
+RUN apt-get install -y curl && curl -s https://deb.nodesource.com/setup_18.x | bash && \
     apt-get install -y nodejs && npm --version
 
 # Install php and composer
